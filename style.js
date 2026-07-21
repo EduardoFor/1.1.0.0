@@ -744,7 +744,7 @@ function atrMais(){
 		document.getElementById(atrId).value = novo;
 	} else {
 		if(tipoPonto.checked){
-			if (consumo > totalPB) {
+			if (consumo >= totalPB) {
 				alert("Pontos bonus insuficiente! Você tem " + totalPB + " PB disponíveis.");
 				return;
 			} else{
@@ -831,12 +831,12 @@ function habMais(){
 	var headerValue = coluna.querySelector('.hab-col-header input[type="number"]').value;
 	
 	var limite = parseInt(headerValue) - 1;
-
+	console.log("total: " + total + " limite: " + limite);
 	if (total <= limite) {
 		document.getElementById(habId).value = novo;
 	} else {
 		if(tipoPonto.checked){
-			if (consumo > totalPB) {
+			if (consumo >= totalPB) {
 				alert("Pontos bonus insuficiente! Você tem " + totalPB + " PB disponíveis.");
 				return;
 			} else{
@@ -905,6 +905,16 @@ function habMenos(){
   	
 }
 
+function antecedenteMais(){
+  	var atual = parseInt(document.getElementById(antDice).value);
+  	var totalXP = parseInt(document.getElementById('XP-pool').value);
+	var totalPB = parseInt(document.getElementById('PB-pool').value);
+	var consumo = 0;
+	var novo = atual - (-1); //Evitando Concatenacoes
+
+	
+}
+
 document.querySelector('input[type="number"]').addEventListener('wheel', function(e) {
   e.preventDefault();
 });
@@ -954,11 +964,23 @@ function abrirModal() {
 }
 
 function fecharModal() {
-  document.getElementById("overlay-confirmacao").style.display = "none";
-  document.getElementById("input-confirmacao").value = ""; // Limpa o input
+	var checkboxModal = document.getElementById("tipoPonto");
+	checkboxModal.checked = true;
+  	document.getElementById("overlay-confirmacao").style.display = "none";
 }
 
-// Inidi
+function confirmacao() {
+	var PBrestantes = parseInt(document.getElementById('PB-pool').value);
+	var totalXP = parseInt(document.getElementById('XP-pool').value);
+	totalXP = totalXP + PBrestantes * 3;
+	document.getElementById('XP-pool').value = totalXP;
+	document.getElementById('PB-pool').value = 0;
+	document.getElementById("overlay-confirmacao").style.display = "none";
+	document.getElementById('PB-pool').disabled = true;
+	document.getElementById('tipoPonto').disabled = true;
+}
+
+// Iniciando atributos
 
 function iniciarAtributos() {
 	const inputs = document.querySelectorAll('.atr-row input[type="number"]');

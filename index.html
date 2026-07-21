@@ -437,114 +437,41 @@
             <div class="alignVantagens">
               <div id="vantagemDiv">
                 <h3 align="center">Antecedentes</h3>
-                <div id="antecedenteTable" class="atr-grid">
-                  <div class="atr-col" id="mentaisCol">
-                    <div class="atr-row">
-                      <input id="Antecedente-1txt" type="text" placeholder="Antecedente">
-                      <input class="tamanhoNumbers" id="Antecedente-1" type="number" placeholder="coloque aqui" value="0">
-                      <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Percepcao"><span class="slider"></span></label></div>
+                <div>
+                  <div id="antecedenteTable" class="ant-grid">
+                    <div class="ant-col" id="mentaisCol">
+                      <div class="ant-row">
+                        <input id="Antecedente-1txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-1" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-1"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-2txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-2" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-2"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-3txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-3" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-3"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-4txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-4" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-4"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-5txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-5" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-5"><span class="slider"></span></label></div>
+                      </div>
                     </div>
-                    <div class="atr-row">
-                      <p>Inteligência:</p>
-                      <input class="tamanhoNumbers" id="Inteligencia" type="number" placeholder="coloque aqui" value="1">
-                      <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Inteligencia"><span class="slider"></span></label></div>
-                    </div>
-                    <div class="atr-row">
-                      <p>Raciocínio:</p>
-                      <input class="tamanhoNumbers" id="Raciocinio" type="number" placeholder="coloque aqui" value="1">
-                      <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Raciocinio"><span class="slider"></span></label></div>
-                    </div>
+                  </div>
+                  <div class="ant-actions">
+                  <button onclick="antMenos()" class="action-buttons">-</button>
+                  <button onclick="antMais()" class="action-buttons">+</button>
                 </div>
-              </div>
-                <table id="antecedenteTable" class="tableSpace">
-                  <tr>
-                    <td><input id="Antecedente-1txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers" id="Antecedente-1" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-1">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input id="Antecedente-2txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers" id="Antecedente-2" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-2">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input id="Antecedente-3txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers"  id="Antecedente-3" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-3">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input id="Antecedente-4txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers" id="Antecedente-4" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-4">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input id="Antecedente-5txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers" id="Antecedente-5" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-5">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><input id="Antecedente-6txt" type="text" placeholder="Antecedente"></td>
-                    <td>
-                      <input class="tamanhoNumbers"  id="Antecedente-6" type="number" placeholder="coloque aqui" value="0"></input>
-                    </td>
-                    <td>
-                      <div class="toggle-switch">
-                        <label class="switch-label">
-                        <input type="checkbox" class="checkbox" id="Antecedente-6">
-                        <span class="slider"></span>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                </table>
-                <br>
-                <!--<button class="glow-on-hover" type="button" onclick="antecedenteDice()">JOGAR DADOS</button>
-                <div id="dadosAnt" class="diceArea"></div>-->
+                </div>
                 <br>
               </div>
               <div id="donsDiv">
