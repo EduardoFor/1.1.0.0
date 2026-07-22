@@ -463,6 +463,9 @@ function exportarParaArquivo() {
 		data[input.id] = input.value;
 		}
 	});
+	data.qualidadesDefeitosSelecionados = JSON.parse(
+		localStorage.getItem('qualidadesDefeitosSelecionados') || '[]'
+	);
 
 	const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
 	const url = URL.createObjectURL(blob);
@@ -485,6 +488,16 @@ function importarDeArquivo(input) {
 		try {
 			const data = JSON.parse(e.target.result);
 			Object.keys(data).forEach(id => {
+				if (id === 'qualidadesDefeitosSelecionados') {
+					const selecao = Array.isArray(data[id])
+						? data[id].map(item => typeof item === 'string' ? item : item.id).filter(Boolean)
+						: [];
+					localStorage.setItem(id, JSON.stringify(selecao));
+					if (typeof window.carregarQualidadesDefeitos === 'function') {
+						window.carregarQualidadesDefeitos(selecao);
+					}
+					return;
+				}
 				const input = document.getElementById(id);
 				if (input) {
 				input.value = data[id];
@@ -497,6 +510,203 @@ function importarDeArquivo(input) {
 	};
 	reader.readAsText(file);
 }
+
+function inicializarQualidadesDefeitos() {
+	const busca = document.getElementById('buscarQualidadeDefeito');
+	const seletor = document.getElementById('selecionarQualidadeDefeito');
+	const status = document.getElementById('statusQualidadeDefeito');
+	const cards = document.getElementById('qualidadesDefeitosCards');
+
+	if (!busca || !seletor || !status || !cards) return;
+
+	let itens = [];
+	let itensSelecionados = [];
+	let selecaoPendente = null;
+	const storageKey = 'qualidadesDefeitosSelecionados';
+
+	function normalizarTexto(texto) {
+		return texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase();
+	}
+
+	function salvarSelecao() {
+		localStorage.setItem(storageKey, JSON.stringify(itensSelecionados));
+	}
+
+	function alterarPontosBonus(valor) {
+		const pontosBonus = document.getElementById('PB-pool');
+		const saldoAtual = Number.parseInt(pontosBonus.value, 10) || 0;
+		const novoSaldo = saldoAtual + valor;
+
+		if (novoSaldo < 0) return false;
+
+		pontosBonus.value = novoSaldo;
+		return true;
+	}
+
+	function renderizarCards() {
+		cards.replaceChildren();
+
+		if (itensSelecionados.length === 0) {
+			const mensagemVazia = document.createElement('p');
+			mensagemVazia.className = 'qualidades-defeitos-vazio';
+			mensagemVazia.textContent = 'Nenhuma qualidade ou defeito selecionado.';
+			cards.appendChild(mensagemVazia);
+			return;
+		}
+
+		itensSelecionados.forEach(itemId => {
+			const item = itens.find(qualidadeDefeito => qualidadeDefeito.id === itemId);
+			if (!item) return;
+
+			const card = document.createElement('article');
+			card.className = `qualidade-defeito-card ${item.tipo.toLocaleLowerCase()}`;
+			card.dataset.itemId = item.id;
+
+			const tipo = document.createElement('span');
+			tipo.className = 'qualidade-defeito-tipo';
+			tipo.textContent = item.tipo;
+
+			const titulo = document.createElement('h4');
+			titulo.textContent = item.nome;
+
+			const alternarDescricao = document.createElement('button');
+			alternarDescricao.className = 'qualidade-defeito-alternar';
+			alternarDescricao.type = 'button';
+			alternarDescricao.setAttribute('aria-expanded', 'false');
+			alternarDescricao.textContent = 'Mostrar descrição';
+
+			const descricao = document.createElement('p');
+			descricao.className = 'qualidade-defeito-descricao';
+			descricao.textContent = item.descricao;
+			descricao.hidden = true;
+			alternarDescricao.addEventListener('click', () => {
+				const expandido = alternarDescricao.getAttribute('aria-expanded') === 'true';
+				alternarDescricao.setAttribute('aria-expanded', String(!expandido));
+				alternarDescricao.textContent = expandido ? 'Mostrar descrição' : 'Ocultar descrição';
+				descricao.hidden = expandido;
+			});
+
+			const remover = document.createElement('button');
+			remover.className = 'qualidade-defeito-remover';
+			remover.type = 'button';
+			remover.title = `Remover ${item.nome}`;
+			remover.setAttribute('aria-label', `Remover ${item.nome}`);
+			remover.textContent = '×';
+			remover.addEventListener('click', () => {
+				alterarPontosBonus(-Number(item.valor) || 0);
+				itensSelecionados = itensSelecionados.filter(id => id !== item.id);
+				salvarSelecao();
+				renderizarCards();
+			});
+
+			card.append(tipo, titulo, alternarDescricao, descricao, remover);
+			cards.appendChild(card);
+		});
+	}
+
+	window.limparQualidadesDefeitos = () => {
+		itensSelecionados = [];
+		salvarSelecao();
+		renderizarCards();
+	};
+
+	window.carregarQualidadesDefeitos = selecao => {
+		if (itens.length === 0) {
+			selecaoPendente = selecao;
+			return;
+		}
+		itensSelecionados = Array.isArray(selecao)
+			? selecao.filter(itemId => itens.some(item => item.id === itemId))
+			: [];
+		salvarSelecao();
+		renderizarCards();
+	};
+
+	function atualizarOpcoes() {
+		const termo = normalizarTexto(busca.value.trim());
+		const itensFiltrados = itens.filter(item =>
+			normalizarTexto(item.nome).includes(termo)
+		);
+
+		seletor.replaceChildren();
+		const opcaoInicial = document.createElement('option');
+		opcaoInicial.value = '';
+		opcaoInicial.textContent = itensFiltrados.length
+			? 'Selecione uma qualidade ou defeito...'
+			: 'Nenhum item encontrado';
+		seletor.appendChild(opcaoInicial);
+
+		itensFiltrados.forEach((item, indice) => {
+			const opcao = document.createElement('option');
+			opcao.value = item.id || String(indice);
+			opcao.textContent = `${item.nome} (${item.tipo})`;
+			seletor.appendChild(opcao);
+		});
+
+		seletor.disabled = itensFiltrados.length === 0;
+	}
+
+	busca.addEventListener('input', atualizarOpcoes);
+	seletor.addEventListener('change', () => {
+		const item = itens.find(qualidadeDefeito => qualidadeDefeito.id === seletor.value);
+
+		if (!item) return;
+
+		if (!itensSelecionados.includes(item.id)) {
+			const valor = Number(item.valor) || 0;
+			if (!alterarPontosBonus(valor)) {
+				status.textContent = `Pontos Bonus insuficientes para ${item.nome}.`;
+				seletor.value = '';
+				return;
+			}
+			itensSelecionados.push(item.id);
+			salvarSelecao();
+			renderizarCards();
+		}
+		seletor.value = '';
+	});
+
+	fetch('./qualidades_defeitos.json')
+		.then(resposta => {
+			if (!resposta.ok) throw new Error('Não foi possível carregar o arquivo.');
+			return resposta.json();
+		})
+		.then(dados => {
+			if (Array.isArray(dados)) {
+				itens = dados.map(item => ({
+					...item,
+					tipo: item.tipo?.toLocaleLowerCase() === 'defeito' ? 'Defeito' : 'Qualidade'
+				}));
+			} else {
+				itens = [
+					...(dados.qualidades || []).map(item => ({ ...item, tipo: 'Qualidade' })),
+					...(dados.defeitos || []).map(item => ({ ...item, tipo: 'Defeito' }))
+				];
+			}
+			try {
+				const selecaoSalva = selecaoPendente || JSON.parse(localStorage.getItem(storageKey) || '[]');
+				itensSelecionados = selecaoSalva.filter(itemId =>
+					itens.some(item => item.id === itemId)
+				);
+				selecaoPendente = null;
+			} catch {
+				itensSelecionados = [];
+			}
+			atualizarOpcoes();
+			renderizarCards();
+			status.textContent = `${itens.length} itens disponíveis.`;
+		})
+		.catch(() => {
+			seletor.replaceChildren();
+			const opcaoErro = document.createElement('option');
+			opcaoErro.textContent = 'Não foi possível carregar os itens';
+			seletor.appendChild(opcaoErro);
+			seletor.disabled = true;
+			status.textContent = 'Abra a ficha por um servidor local para carregar o arquivo JSON.';
+		});
+}
+
+inicializarQualidadesDefeitos();
 
 function retirarDados() {
 

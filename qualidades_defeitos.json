@@ -1,0 +1,895 @@
+[
+    {
+        "id": "ultra_flexibilidade_nas_juntas",
+        "nome": "Ultra-flexibilidade nas Juntas",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Você possui uma flexibilidade fantástica, reduzindo as dificuldades das suas paradas que exijam flexibilidade (como sair de um agarrão de um oponente) em -2. Você pode se contorcer em estranhas posições ou meter-se em espaços reduzidos com essa Qualidade. Multi-metamorfo (Qualidade: 1 ou 5 pontos) Você encara a arte da transformação parcial (ver acima) com facilidade e faz o teste de Destreza + Instinto Primitivo com dificuldade 6 em vez de 9. Na versão de 5 pontos essa Qualidade elimina a necessidade do gasto de Força de Vontade. Você pode obter uma transformação parcial quase que à vontade."
+    },
+    {
+        "id": "equilibrio_perfeito",
+        "nome": "Equilíbrio Perfeito",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Você tem uma fantástica aptidão para se manter de pé, seja um talento natural ou um resultado de horas de treino. Provavelmente, você nunca caiu na vida, nem parece que perderá seu equilíbrio num futuro próximo. Quaisquer testes que você faça na tentativa de equilíbrio físico (como caminhar na corda bamba, movimentar-se no gelo ou outras superfícies escorregadias, escalar montanhas ou rochedos) são feitas com dificuldade -2."
+    },
+    {
+        "id": "visao_lupina",
+        "nome": "Visão Lupina",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Em todas as suas formas, você enxerga cores e intensidades de luz, como um lobo faz. Sua visão de cor é um pouco mais turva que a dos humanos, ainda que você abrace um amplo espectro de cores. No entanto, sua visão noturna supera e muito a visão noturna humana. Você pode perceber movimentação mais prontamente. Você recebe um dado extra em todos os testes de Percepção que envolvam movimento ou tocaia a noite."
+    },
+    {
+        "id": "ambidestro",
+        "nome": "Ambidestro",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Sua mão ―inábil‖ é quase tão hábil como sua mão dominante. Se destro, você é muito bom em perícias motoras com sua mão esquerda, e vice versa. Em termos de jogo, você apenas tem uma dificuldade de +1 para cada mão quando usar ambas para executar ações distintas — como lutar com duas armas. Se você tentar fazer alguma coisa com sua mão inábil, que normalmente você faria com sua mão dominante (como escrever ou usar um teclado), você apenas sofre uma penalidade de +1 na dificuldade para sua mão inábil. Um personagem não-ambidestro tem uma penalidade de +1 na dificuldade em sua mão dominante e +3 em sua mão inábil quando tentar executar ações diferentes com ambas as mãos."
+    },
+    {
+        "id": "glabro_bonito",
+        "nome": "Glabro Bonito",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você tem uma forma em Glabro que pode passar por humana ainda que maior que um humano normal em tamanho. Você não tem penalidades em Atributos Sociais na forma Glabro."
+    },
+    {
+        "id": "inodoro",
+        "nome": "Inodoro",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você ou não tem cheiro ou apenas exala um suave odor. Quaisquer humanos, animais ou Garou que tentarem rastrear você pelo cheiro tem uma dificuldade +2 para fazê-lo. Você pode ter dificuldades em lidar com Garou lupinos ou lobos visto que eles desconfiarão de sua falta de um odor ―natural‖."
+    },
+    {
+        "id": "temerario",
+        "nome": "Temerário",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Você sente prazer em assumir riscos e tem um talento para sobreviver a situações perigosas. Quando você tentar alguma muito perigosa ou de alto risco (como saltar na direção de um mastro à 30 andares acima do chão e tentar agarrá-lo), você ganha três dados adicionais em todos os seus testes e ainda pode ignorar um único resultado ―um‖ (dando um sucesso adicional) naqueles testes. Geralmente, uma ação precisa ter ao menos uma dificuldade 8 e com um potencial de causar ao menos três níveis de dano em caso de falha para ser tida como suficientemente perigosa para conseguir tal bônus."
+    },
+    {
+        "id": "corpo_grande",
+        "nome": "Corpo Grande",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "Você alcança uma altura próxima a 2,10m de altura e pode pesar algo em torno de 180kg em sua forma Hominídea; suas outras formas são proporcionalmente grandes. Essa Qualidade confere um nível extra de vitalidade, que age como um Nível de Vitalidade Escoriado extra para fins de dano e penalidades por ferimentos. Claro que, com seu imenso tamanho vem alguns problemas (se misturar numa multidão, encontrar roupas que sirvam, procurar assento num avião)..."
+    },
+    {
+        "id": "metamorfo",
+        "nome": "Metamorfo",
+        "tipo": "qualidade",
+        "valor": -7,
+        "descricao": "Metamorfose para você é tão fácil como respirar. Você não precisa fazer testes para mudar de forma, nem gastar o ponto de Fúria necessário para mudança instantânea. Você faz suas mudanças como se tivesse obtido cinco sucessos no seu teste de mudança de formas. Se você perder a consciência devido a ferimentos ou outra razão, você pode fazer um teste de Raciocínio + Instinto Primitivo (dificuldade 8) para escolher que forma assumir independente de voltar a forma racial."
+    },
+    {
+        "id": "cheiro_de_animal",
+        "nome": "Cheiro de Animal",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você tem o odor de um animal mesmo na forma Hominídea. Sempre que estiver em áreas fechadas ou numa multidão, seus testes Sociais são feitos com uma dificuldade de +2. Ambientes abertos ou em situações onde você pode se distanciar dos humanos, seu cheiro não é detectável. Lobos quase não percebem esse Defeito."
+    },
+    {
+        "id": "deficiencia_auditiva",
+        "nome": "Deficiência Auditiva",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você tem problemas em ouvir certos sons, distâncias de sons ou algum outro problema que afeta seu sentido auditivo. Você sofre de uma dificuldade +2 em todos os testes que envolvam audição. Sua forma Lupina recebe o bônus padrão em Percepção apenas nos testes envolvendo cheiro."
+    },
+    {
+        "id": "acromatopsia",
+        "nome": "Acromatopsia",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você não pode distinguir cores, mas vê o mundo em variantes tons de preto, branco e cinza. Isso não é daltonismo real, que normalmente se refere a incapacidade de distinguir entre certas cores (como vermelho e verde). A cor não possui significado para você, apesar de diferenciar intensidades de sombra — cinza escuro, cinza claro e cinza médio etc. Esse Defeito se manifesta mais comumente entre Lupinos."
+    },
+    {
+        "id": "incapacidade_de_mudar_parcialmente",
+        "nome": "Incapacidade de Mudar Parcialmente",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você não possui a habilidade de mesclar formas. Você não pode mudar sua laringe em Lupino para ser capaz de falar nem crescer focinho de lobo em Glabro. Você apenas pode mudar para uma forma completa."
+    },
+    {
+        "id": "baixa_estatura",
+        "nome": "Baixa Estatura",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Sua baixa estatura causa problemas a você, tornando complicado enxergar através de obstáculos. Sua forma Crinos é menor na mesma proporção (e menos intimidadora). Suas dificuldades são +2 para todos os testes de perseguição. Você e seu Narrador precisam ter sempre em mente sua baixa estatura. Em certos momentos, esse Defeito pode dar a você uma vantagem em ocultamento."
+    },
+    {
+        "id": "estritamente_carnivoro",
+        "nome": "Estritamente Carnívoro",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Vegetais e grãos não tem benefício nutricional para você; apenas podendo subsistir através de carne, o mais próximo do natural possível. Você realmente tem problemas em áreas onde a carne é escassa."
+    },
+    {
+        "id": "caolho",
+        "nome": "Caolho",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você carece de percepção em profundidade e tem uma visão limitada devido ao fato de você possuir apenas um olho. Seu lado cego não possui visão periférica. Quando a visão em profundidade está envolvida (com em combate a distância), você sofre penalidade de 2 dados em seus testes."
+    },
+    {
+        "id": "deficiencia_visual",
+        "nome": "Deficiência Visual",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você tem uma grave dificuldade na visão devido à algum defeito incorrigível. Você faz todos os seus testes relativos a visão com uma dificuldade de +2. Sua forma Lupina não recebe o bônus padrão de Percepção para verificações visuais, embora os outros sentidos não sejam afetados. Você também sofre de cegueira noturna. Diferente de miopia ou hipermetropia, esse defeito não pode ser corrigido."
+    },
+    {
+        "id": "deformidade",
+        "nome": "Deformidade",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você tem um membro deformado, uma coluna torcida ou alguma outra deformidade que interfere com suas interações com os outros e algumas vezes causa dificuldades físicas também. Você tem uma dificuldade de +1 em todos os testes Sociais e normalmente tem outras penalidades apropriadas a testes Físicos (como em Esportes). Você deve trabalhar a natureza de sua deformidade com seu Narrador, bem como as exatas penalidades propostas."
+    },
+    {
+        "id": "aleijado",
+        "nome": "Aleijado",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Seja do nascimento ou devido a um acidente, você é aleijado e sofre uma penalidade de dois dados em testes de movimento em todas as suas formas. Você não pode assumir esse Defeito e ao mesmo tempo a Qualidade: Ultra-flexibilidade nas Juntas."
+    },
+    {
+        "id": "monstruosidade",
+        "nome": "Monstruosidade",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Sua aparência física é realmente horrenda a vista de seus companheiros Garou. Todas as suas formas carregam alguns traços grotescos; sua forma Hominídea vagamente parece humana, embora suas outras formas tenham algo de monstruoso que as desfigurem. Você deve decidir como você se parece. Sua Aparência é 0 e não pode ser aumentada com pontos de experiência, exceto em circunstâncias notáveis."
+    },
+    {
+        "id": "um_braco_so",
+        "nome": "Um Braço Só",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você nasceu com apenas um braço ou o perdeu através de um ferimento de algum tipo. Você não sofre da penalidade da mão inábil, visto que você se adaptou a usar sua única mão para muitas atividades. No entanto, quando você precisar usar as duas mãos você perde dois dados de sua parada. Sua velocidade nas formas Hispo ou Lupina é reduzida em 25%."
+    },
+    {
+        "id": "surdez",
+        "nome": "Surdez",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Você nasceu completamente surdo ou perdeu sua audição inteiramente durante sua infância. Você automaticamente falha em qualquer teste envolvendo audição. Você pode sentir as vibrações sonoras dos sons suficientemente altos, mas não pode ouvir nada."
+    },
+    {
+        "id": "mudo",
+        "nome": "Mudo",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Você tem uma laringe sem utilidade e não pode falar sob quaisquer circunstâncias. Você precisa se comunicar através de escrita ou sinais."
+    },
+    {
+        "id": "idade_de_lobo",
+        "nome": "Idade de Lobo",
+        "tipo": "defeito",
+        "valor": 5,
+        "descricao": "Você envelhece como um lobo mais que como um Garou. Você não tinha mais de 20 anos de atividade na época de sua Primeira Mudança. Garou Lupinos sofrem os efeitos da idade no início de seus oito anos, embora personagens Hominídeos comecem a envelhecer dentro de cinco anos após sua Primeira Mudança. Até sua Primeira Mudança, você parecia envelhecer normalmente."
+    },
+    {
+        "id": "cegueira",
+        "nome": "Cegueira",
+        "tipo": "defeito",
+        "valor": 6,
+        "descricao": "Você é totalmente cego, carecendo até da mais vaga visão. Você não pode nem mesmo testar Percepção em estímulos visuais. Todos os testes feitos para percorrer atalhos tem dificuldade +1, visto que você não pode se valer método usual de visualizar o outro mundo. Sociais"
+    },
+    {
+        "id": "magnetismo_animal",
+        "nome": "Magnetismo Animal",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Outros de sua raça (humanos, se você for Hominídeo; lobos, se for Lupino; Impuros optam entre humanos e lobos, não Garou) acham você especialmente atraente. Todos os seus testes de sedução ou atração animal são feitos com uma dificuldade de -2. Por outro lado, outros podem considerar você como uma ameaça e desafiar você pela atenção de uma parceira em potencial."
+    },
+    {
+        "id": "favor_do_anciao",
+        "nome": "Favor do Ancião",
+        "tipo": "qualidade",
+        "valor": {
+            "min": -1,
+            "max": -3
+        },
+        "descricao": "Você adquiriu a graça de um ancião de sua seita (ou até mesmo de outra seita) devido a alguma coisa que você ou sua matilha fizeram no passado. Uma Qualidade de 1 ponto representa um favor menor; por 2 significa que você fez alguma coisa significativa pelo ancião; por 3 pontos, provavelmente significa que você salvou a vida do ancião. Você pode apenas usar desse favor uma vez, mas outros Garou podem saber que um certo ancião está endividado com você e reagir com você adequadamente."
+    },
+    {
+        "id": "apoio_familiar",
+        "nome": "Apoio Familiar",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Sua família sabe o que você é e aceita sua nova vida de forma sincera. Talvez seus pais sejam Parentes e se prepararam para a possibilidade de você poder ser um Garou pleno. Entretanto, eles não são necessariamente Parentes (do tipo comprado através do Antecedente: Parentes); eles podem não entender o que você se tornou, mas acreditam que você é ―especial‖ ou ―abençoado‖. Embora você não aceite que eles se arrisquem por você ou sua matilha, você pode confiar em seu suporte moral e sua compreensão — e talvez um lugar para descansar numa ocasião."
+    },
+    {
+        "id": "reputacao",
+        "nome": "Reputação",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Sua reputação entre os Garou de sua seita faz você confiável. Você adquiriu seu bom nome por si mesmo ou através das ações de sua matilha. Quando você lidar com os Garou de sua seita, você recebe três dados extras em todos os seus testes Sociais. Reputação não pode ser confundida com Renome; você pode ter um ―bom nome‖ com sua seita embora possuindo relativamente pouco Renome. Você não pode assumir o Defeito: Má Reputação."
+    },
+    {
+        "id": "segredo_sombrio",
+        "nome": "Segredo Sombrio",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você possui um passado secreto que, caso seja revelado, poderia causar a você um grande embaraço, na melhor das hipóteses, ou fazer de você um exilado ou até mesmo caçado na sociedade Garou, na pior delas. Talvez você tenha sido amante de um Dançarino da Espiral Negra. Pode ser que você tenha sido responsável pelo massacre de sua matilha original ou pela morte misteriosa do líder da seita. Esse segredo aflige sua mente todo o tempo, visto que seus amigos e companheiros de matilha não estão cientes de sua vergonha. Ocasionalmente, dicas sobre seu segredo podem surgir nas histórias e você precisa se precaver para não revelar o assunto. Enquanto seu segredo permanecer desconhecido para aqueles que podem usá-lo contra você, o Defeito é mantido, até mesmo se outros indivíduos o descobrirem. Caso seu Segredo Sombrio se resolver e não for mais um fator em sua vida, você precisa sacrificar três pontos de experiência para recomprá-lo."
+    },
+    {
+        "id": "inimigo",
+        "nome": "Inimigo",
+        "tipo": "defeito",
+        "valor": {
+            "min": 1,
+            "max": 5
+        },
+        "descricao": "Você adquiriu um inimigo (ou inimigos) que não apenas sabem o que você é, mas também tem poder próprio. Por 1 ponto, significa que seu inimigo é outro Garou do mesmo Posto que você que assumiu um forte desgosto por você ou que culpa você por algum erro do passado. Por 3 pontos, indica que uma matilha de Dançarinos da Espiral Negra carrega um rancor particular por você ou que um pequeno grupo sobrenaturalmente poderoso de caçadores de lobisomens visou você como uma ameaça potencial. Por 5 pontos, significa que você irritou alguém que se move e mistura dentro da sociedade Garou ou um poderoso vampiro ancião."
+    },
+    {
+        "id": "educacao_deturpada",
+        "nome": "Educação Deturpada",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "O Garou que encontrou você após sua Primeira Mudança, que supervisionou seu Ritual de Passagem e que inicialmente adentrou você na sociedade Garou ensinou tudo o que ele sabia — e tudo estava errado. Quer tenha sido por ignorância ou perversidade, você (e seu Narrador) decidem. Suas suposições erradas e crenças distorcidas causam a você uma grande quantia de pesar até que alguém endireite você. Eventualmente, você pode superar os problemas causados por esse Defeito (e estar apto a pagar o custo em pontos de experiência para recomprá-lo), mas nesse meio tempo, ele deve presenteá-lo com muitas boas oportunidades de interpretação."
+    },
+    {
+        "id": "pais_insistentes",
+        "nome": "Pais Insistentes",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Muitos lobisomens, a menos que possuam pais Parentes, sacrificam seus laços familiares após sua Primeira Mudança, para preservar o Véu. No entanto, seus pais não desistiram de você. Eles contratam detetives para encontrar você, fixam cartazes com sua foto em quadro de avisos locais, incomodam as rádios e as estações de TV para vincular anúncios de utilidade pública ou dedicam suas páginas na internet para encontrar você. Eles podem não saber sobre sua nova vida, suspeitando ao invés disso que você fugiu ou se juntou a um culto, ou eles podem ter ligações com a Pentex e possuem motivações ocultas em querer localizar você. Apenas hominídeos podem assumir esse Defeito."
+    },
+    {
+        "id": "cacado",
+        "nome": "Caçado",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Um dedicado caçador visa você como sua caça, convencido que você é um monstro saído das lendas disposto a caçar os humanos. Qualquer um que você conheça, inclusive seus companheiros de matilha e até mesmo os humanos de quem você é íntimo, pode estar em perigo por conta desse caçador. Embora seu algoz deseje a extinção de todos os lobisomens, ele parece se concentrar inicialmente em você. Por brincadeira do destino, o Delírio não tem efeito sobre seu algoz. Ele também é inteligente e detém recursos e provavelmente irá criar terríveis armadilhas para você ao invés de cair nas armadilhas que você deixar para ele."
+    },
+    {
+        "id": "ma_reputacao",
+        "nome": "Má Reputação",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você adquiriu um nome ruim entre os Garou na sua seita; seja por conta de suas próprias ações ou devido alguma coisa envolvendo a sua matilha. Você sofre de uma penalidade de dois dados em qualquer teste Social envolvendo os Garou de sua seita. Renome (ou a carência deste) não tem nada a ver com sua reputação. Os membros de sua própria seita (exceto os de sua matilha) repudiam você independente de quanto Renome você tenha. Você não pode ter a Qualidade: Reputação."
+    },
+    {
+        "id": "descendente_impuro",
+        "nome": "Descendente Impuro",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Você é o pai ou a mãe de um filhote impuro de um relacionamento ilícito com outro Garou. Você precisa decidir as circunstâncias em torno do nascimento da criança — tais como quando isso aconteceu e se você está tentando criar a criança em sua própria seita (para melhor ou para pior) ou se o filhote foi adotado por outra seita para evitar mais embaraço. Embora esse Defeito precise ser escolhido durante a criação de personagem, você ou seu Narrador pode decidir trazê-lo para dentro do jogo, ao invés de simplesmente deixá- lo como parte do passado de seu personagem. Os efeitos desse Defeito incluem os de Má Reputação (penalidade de dois dados em qualquer teste Social feitos, independente do Garou conhecer seu filho), com um encargo adicional de ser exigido que você assuma as responsabilidades assistenciais pelo seu filhote (seu miserável charach!). Como um violador da Litania, você provavelmente estará incapaz de manter qualquer cargo importante na seita ou ser confiável a importantes tarefas não importando o quanto você se esforce para merecer. Mentais"
+    },
+    {
+        "id": "bom_senso",
+        "nome": "Bom Senso",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Você possui um abundante senso de correção e bom senso (o que normalmente não é tão comum entre humanos e Garou). Sempre que você estiver prestes a fazer alguma coisa que vá de encontro ao bom senso, o Narrador pode intervir e avisá-lo que seu personagem está perto de fazer algo imprudente. Essa Qualidade é particularmente recomendada para jogadores novatos que ainda estão entendendo o mundo de Lobisomem e seus perigos."
+    },
+    {
+        "id": "concentracao",
+        "nome": "Concentração",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Você sabe como concentrar seus pensamentos e direcionar sua atenção para eliminar distrações. Circunstâncias que possam ser prejudiciais a você na tomada de ações afetam menos você que a outras pessoas. Você é imune a penalidades por circunstâncias que possam afetar suas paradas de dados ou suas dificuldades; caso você estivesse tentando abrir uma fechadura durante uma tempestade, por exemplo, a qualidade da fechadura ainda poderia afetar a dificuldade do teste, mas a distração pela tempestade não."
+    },
+    {
+        "id": "selvageria",
+        "nome": "Selvageria",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você possui um fantástico controle sobre sua raiva interior. Você pode usar sua Fúria como muitos Garou não podem. Você pode entrar num frenesi selvagem à vontade, ignorando as suas penalidades por ferimentos. Você ainda sofre as conseqüências das ações cometidas durante o frenesi. Quando ocorrerem circunstâncias que possam levá-lo ao frenesi, você precisa fazer o teste normalmente, para verificar se você entra ou não."
+    },
+    {
+        "id": "codigo_de_honra",
+        "nome": "Código de Honra",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você é sustentado por um código pessoal de ética que governa todas as suas ações. Você recebe um sucesso automático para resistir as tentações para violar esse código. Sempre que você precisar resistir a Dominação vampírica, magias de Mente ou alguma outra forma de compulsão sobrenatural que possa causar a violação de seu código de honra, você recebe dois dados extras para seu teste de Força de Vontade. Quando você assumir essa Qualidade, você precisa construir seu próprio código de honra em termos específicos. Você pode escolher uma coisa tão óbvia como a Litania ou ainda criar sua própria lista de moral e ética do que você deve ou não fazer."
+    },
+    {
+        "id": "memoria_eidetica",
+        "nome": "Memória Eidética",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você possui uma memória fotográfica, permitindo que você recrie cenas, conversas e outras informações que você possa ter visto ou ouvido, exatamente como elas aconteceram. Para fazer uso dessa Qualidade, você precisa obter ao menos um sucesso num teste de Percepção + Prontidão. Isso habilita você recobrar uma imagem ou som em particular (como uma conversa ou uma página de um livro) com precisão, até mesmo se você tiver presenciado apenas uma vez. O Narrador deve estipular a dificuldade de acordo com a sua familiaridade com o que você está tentando se lembrar. Cinco ou mais sucessos conferem uma lembrança plena. O Narrador pode fornecer a você toda a informação que seu personagem possa lembrar."
+    },
+    {
+        "id": "temperamento_calmo",
+        "nome": "Temperamento Calmo",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Você permanece calmo e sereno até mesmo nas mais difíceis das circunstâncias. Todos os seus testes de Fúria são feitos com uma dificuldade +2, independente da situação que esteja provocando seu frenesi."
+    },
+    {
+        "id": "faz_tudo",
+        "nome": "Faz-Tudo",
+        "tipo": "qualidade",
+        "valor": -5,
+        "descricao": "Você tem um conhecimento mínimo sobre uma variedade de coisas. Caso você faça um teste com uma Perícia que não possua níveis, você não sofre da penalidade de +1 na dificuldade. Você pode tentar um teste com um Conhecimento que você não possua, apesar de que a dificuldade é elevada em 2. Apenas personagens hominídeos ou impuros podem assumir essa Qualidade."
+    },
+    {
+        "id": "vontade_de_ferro",
+        "nome": "Vontade de Ferro",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Você possui uma tremenda habilidade para resistir a tentativas de controle mental. Você recebe três dados extras para resistir a manipulação de sua mente e pode gastar um ponto de Força de Vontade para ignorar o controle mental direto de um vampiro. Essa Qualidade funciona apenas com controle mental direto, não manipulação mental; Dons que induzem ao frenesi terão normalmente suas chances de sucesso, por exemplo."
+    },
+    {
+        "id": "compulsao",
+        "nome": "Compulsão",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você se sente compelido a fazer certas coisas em certos momentos sob certas circunstâncias. Essa peculiaridade psicológica assume uma forma altamente ritualizada (lavar as mãos ou arrumar-se freqüentemente) ou em situações específicas (jogar, confessar, falar, furtar compulsivamente). Esse Defeito não apenas causa problemas a você, mas também aos seus companheiros de matilha. Você pode gastar um ponto de Força de Vontade para evitar a compulsão temporariamente. Certifique-se com seu Narrador quanto tempo você pode resistir antes de precisar gastar outro ponto de Força de Vontade ou sucumbir a sua compulsão."
+    },
+    {
+        "id": "pesadelos",
+        "nome": "Pesadelos",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Terríveis pesadelos incomodam seu sono todas as noites, às vezes permeiam seus pensamentos durante o dia. Às vezes, (determinadas pelo Narrador) distraem você de uma forma tal que você perde um dado em todas as suas ações durante o dia. Algumas vezes você tem dificuldade para distinguir entre o que é real e o que é sonho. (Narradores acostumados com o uso de seqüências oníricas podem — e devem — aproveitar esse Defeito)."
+    },
+    {
+        "id": "timidez",
+        "nome": "Timidez",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você é avesso a ser o centro das atenções e se sente desconfortável meio a multidões. Você faz todos os seus testes Sociais, exceto onde haja apenas você e outra pessoa, com uma dificuldade +1. Se você é o centro da situação, sua dificuldade sobe para +2. Falar em público está fora de questão."
+    },
+    {
+        "id": "coracao_mole",
+        "nome": "Coração Mole",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "A visão do sofrimento é mais do que você pode suportar. Quer seja você muito compassivo e sensível, simplesmente tenha um estômago fraco ou uma aversão a dor, você não pode testemunhar alguém sofrer. Quando isso acontece, você se sente enjoado por dias subseqüentes e tem problemas para dormir devido a memória do incidente. Você tenta evitar situações nas quais você possa ver alguém sofrendo ou faz o máximo para proteger aqueles ao seu redor, tanto de sofrer como de testemunhar alguém sofrer. Se você se controlar para encontrar alguém sofrendo, todos os seus testes na hora seguinte são feitos com uma dificuldade de +2."
+    },
+    {
+        "id": "dificuldade_de_fala",
+        "nome": "Dificuldade de Fala",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você sofre de um defeito na fala, como gagueira ou ceceio, que interfere na sua comunicação oral. Esse impedimento afeta não apenas sua voz humana, mas também sua língua Garou, tornando seus uivos e rosnados difíceis de serem compreendidos. Você tem uma dificuldade de +2 em qualquer teste pertinente. Embora não tenha que interpretar esse Defeito constantemente, você poderia trazê-lo para dentro do jogo quando lidar com estranhos ou em situações estressantes."
+    },
+    {
+        "id": "amnesia",
+        "nome": "Amnésia",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você não tem lembranças de seu passado antes de sua Primeira Mudança. Você não sabe se ainda possui uma família ou se alguém lhe procura, muito menos onde você nasceu ou qualquer coisa sobre sua educação (apesar de que você lembra do que aprendeu). No entanto, seu passado pode surpreender você, revelando muitos fatos surpreendentes sobre sua vida anterior. Você pode assumir até mais cinco pontos de Defeitos extras que permanecem desconhecidos por você. Seu Narrador os escolhe e os traz para dentro do jogo (e para sua surpresa) durante o curso da sua crônica."
+    },
+    {
+        "id": "mentalidade_de_matilha",
+        "nome": "Mentalidade de Matilha",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você está perdido sem sua matilha. Sua presença ajuda a defini-lo ao um extremo. Você tem pouca identidade fora de sua matilha e até mesmo tem dificuldade de falar em termos como ―eu‖ ou ―mim‖. Enquanto estiver com pelo menos um membro de sua matilha, sua dificuldade em todos os testes envolvendo atividades ou estratégias de matilha é -1. Quando você está sozinho, suas dificuldades aumentam em +1 em quaisquer tarefas onde você normalmente espera que outras pessoas o ajude (como combate). Você algumas vezes tem problemas em tomar decisões sem sua matilha para ajudar você, até mesmo se você for o líder da matilha. Em situações de tensão, você pode precisar fazer um teste de Força de Vontade para agir por si próprio. Fobia (Defeito: 2 ou 3 pontos) Alguma coisa traz um medo irracional e esmagador sobre você. Quer tenha medo de aranhas, multidões ou lugares fechados, você se esforça para evitar o objeto de seu medo. Se tem uma fobia leve (2 pontos), você precisa fazer um teste de Força de Vontade se alguma coisa acionar seu medo. O Narrador determina a dificuldade do teste dependendo das circunstâncias do encontro. Você precisa obter no mínimo três sucessos para se aproximar com o objeto de seu temor ou lidar com a situação de seu medo. Se você falhar no teste, você foge. Na versão de 3 pontos desse Defeito indica que você precisa fazer um teste para resistir entrar num frenesi raposa quando você encarar seu medo. Seu Narrador precisa aprovar a escolha de sua fobia; objetos de pavor inacreditavelmente tolos ou raros (como abacaxis ou homens de um braço usando chapéu) não são adequados."
+    },
+    {
+        "id": "cabeca_quente",
+        "nome": "Cabeça Quente",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você está mais perto da Wyrm que muitos Garou; sua Fúria queima mais acesa dentro de si que nos outros. Suas dificuldades para evitar frenesis são reduzidas em -2 e você cai mais rapidamente ―sob influência da Wyrm‖. Seja cuidadoso quando escolher esse Defeito; ele pode causar muitos problemas para você e para sua matilha."
+    },
+    {
+        "id": "vinganca",
+        "nome": "Vingança",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Algum evento no passado tem colocado você no caminho de uma vingança. Talvez Dançarinos da Espiral Negra ou um Grupo Avançado da Pentex tenham destruído sua matilha original ou assassinado a sua família humana. Vingar essa injúria assume a prioridade em suas ações, normalmente interferindo com seus deveres. Você precisa gastar Força de Vontade para colocar de lado as suas necessidades temporariamente e focar no assunto em questão. Eventualmente, você pode ter a oportunidade de conseguir sua vingança, se o Narrador decidir trazer esse Defeito ao fim de sua crônica."
+    },
+    {
+        "id": "vontade_fraca",
+        "nome": "Vontade Fraca",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você possui pouca resistência a ser dominado ou intimidado, não podendo usar Força de Vontade à vontade. Você apenas pode gastar Força de Vontade em situações de risco de morte ou quando apropriadas a seu augúrio ou Natureza."
+    },
+    {
+        "id": "perturbado",
+        "nome": "Perturbado",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você sofre de uma forma permanente de insanidade, seja devido a um defeito congênito ou algum trauma do passado. Escolha uma Perturbação das disponíveis no Capítulo Cinco. A Força de Vontade pode permitir você superá-la temporariamente, mas ela sempre retorna."
+    },
+    {
+        "id": "odio",
+        "nome": "Ódio",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Certos tipos de pessoas ou situações incitam um incontrolável e irracional ódio em você, provocando um teste de frenesi sempre que você se confrontar com o objeto ou objetos de sua ira. Além disso, você ativamente busca oportunidades para causar destruição em seus alvos escolhidos. Você deve escolher o alvo de sua ira cuidadosamente, visto que esse Defeito pode afetar suas relações com sua matilha ou sua seita e pode afastá-lo de seus deveres como Garou. Ódio pela Wyrm é presumido e não conta como um objeto adequado para esse efeito."
+    },
+    {
+        "id": "bairrismo",
+        "nome": "Bairrismo",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você possui a natureza territorialista de um lobo. Você não gosta de deixar seu lar nem permitir que pessoas desconhecidas violem seu território. Fora de seu território, todos os seus testes são feitos com uma dificuldade +1 devido a sua inquietude em deixar seu lar. Você também precisa fazer um teste para evitar o frenesi quando estranhos entrarem nele sem sua permissão."
+    },
+    {
+        "id": "deficiencia_em_habilidades",
+        "nome": "Deficiência em Habilidades",
+        "tipo": "defeito",
+        "valor": 5,
+        "descricao": "Por alguma razão, seja por educação deficiente, carência de oportunidade ou simplesmente preguiça, você está abaixo de seu potencial. Você possui cinco pontos a menos para distribuir em uma das suas categorias de Habilidade, seja em Talentos, em Perícias ou em Conhecimentos. Por essa razão, o máximo que você poderá ter naquela categoria serão oito pontos e o mínimo será zero. É claro, você ainda pode gastar pontos de bônus para comprar Habilidades na categoria apropriada. No entanto, você não pode ter qualquer Habilidade naquela categoria em três ou mais pontos no início do jogo. Esse Defeito é particularmente apropriado para personagens lupinos que ainda não aprenderam muito sobre a vida como um Garou. Sobrenatural"
+    },
+    {
+        "id": "aliado_ancestral",
+        "nome": "Aliado Ancestral",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Um de seus espíritos-ancestrais é particularmente íntimo. Você tem uma dificuldade de -2 para contatá- lo através do Antecedente: Ancestrais. Dê vida ao seu ancestral especial com um nome, traços de personalidade, habilidades ou poderes significantes, detalhe sua vida e sua reputação entre os Garou. Para comprar essa Qualidade, você precisa ter o Antecedente: Ancestrais."
+    },
+    {
+        "id": "amor_verdadeiro",
+        "nome": "Amor Verdadeiro",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "A memória de um amor duradouro permanece com você, inspirando-o em seus momentos mais tenebrosos. Mesmo que seu amor verdadeiro tenha sido perdido de forma temporária, você recebe força e conforto ao lembrar dele. Você recebe um sucesso automático em todos os testes de Força de Vontade, no qual só pode ser anulado por uma falha crítica. Em outros momentos, seu amor verdadeiro pode se tornar um entrave, visto que você precisa agir contra qualquer coisa que o ameace. Tal Qualidade requer atenção direta e intensa interpretação."
+    },
+    {
+        "id": "ligado_a_lua",
+        "nome": "Ligado à Lua",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você é mais ligado ao seu augúrio que a maioria dos Garou. Quando Luna estiver na fase crescente de seu augúrio, você recebe um dado extra em todos os seus testes. Correspondentemente, quando Luna estiver minguando em seu augúrio, você perde um dado em todos os seus testes."
+    },
+    {
+        "id": "magnetismo_espiritual",
+        "nome": "Magnetismo Espiritual",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você naturalmente atrai a atenção dos espíritos sempre que você cruza a Película para a Umbra. Na maioria do tempo, os habitantes Umbrais são simplesmente curiosos, ficando a sua volta para ver quem você é e o que você está fazendo em suas ―andanças pelo mato‖. Ocasionalmente, você atrai mais do que esperava — Malditos são normalmente os que respondem como os espíritos mais amigáveis. Nenhum dos espíritos que você encontra ao seu redor está sob seu comando a menos que você use um Dom que permita que você os domine ou influencie de algum modo. Essa Qualidade pode ser tanto uma benção como uma maldição."
+    },
+    {
+        "id": "sorte",
+        "nome": "Sorte",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "Você desfruta de alguma graça especial de Gaia ou algum outro poderoso espírito. Três vezes por história (não sessões de jogo), você pode refazer um teste onde tenha falhado. Um teste pode ser refeito apenas uma vez, o segundo resultado sempre é definitivo."
+    },
+    {
+        "id": "canal_natural",
+        "nome": "Canal Natural",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Você acha mais fácil atravessar a Película que muitos de seus companheiros Garou. A dificuldade para você percorrer atalhos é -1."
+    },
+    {
+        "id": "imune_as_emanacoes_da_wyrm",
+        "nome": "Imune às Emanações da Wyrm",
+        "tipo": "qualidade",
+        "valor": -6,
+        "descricao": "Gaia abençoou você com uma poderosa resistência as emanações da Wyrm. Você não sofre penalidades nas paradas de dados por chamas tóxicas, radiação de origem sobrenatural ou outras formas de toxinas da Wyrm (embora que você ainda sofra o dano). Malditos não podem possuir você. Sua seita está ciente dessa imunidade e normalmente envia você para perigosas missões na certeza que você pode sobreviver."
+    },
+    {
+        "id": "fe_verdadeira",
+        "nome": "Fé Verdadeira",
+        "tipo": "qualidade",
+        "valor": -7,
+        "descricao": "Sua fé duradoura em Gaia ou em qualquer divindade que você adore lhe confere a força para você se manter de pé em momentos de tribulação. Você começa o jogo com um nível de Fé Verdadeira, embora você possa eventualmente aumente seu nível até 10. Quando apropriado, você pode adicionar seu nível de Fé Verdadeira aos seus testes de Força de Vontade. O Narrador decide quais efeitos a Fé Verdadeira possui, mas podem incluir: repelir vampiros, banir espíritos hostis, afastar criaturas da Wyrm temporariamente ou gerar milagres menores de cura ou purificação. Tal Fé é rara e ninguém pode começar o jogo com mais que um ponto em Fé Verdadeira. O Narrador pode recompensá-lo com níveis adicionais como mérito pela sua interpretação."
+    },
+    {
+        "id": "transformacao_amaldicoada",
+        "nome": "Transformação Amaldiçoada",
+        "tipo": "defeito",
+        "valor": {
+            "min": 1,
+            "max": 6
+        },
+        "descricao": "Alguma circunstância, evento ou situação inibe sua habilidade de mudar de formas, exceto em caso de retornar a sua forma racial. Superar esse fator restritivo exige o gasto de um ponto de Força de Vontade e um teste com dificuldade de 8. Alguns exemplos de situações e seus relativos custos em pontos incluem: • Música relaxante (1 ponto) • Próximo de acônito (2 pontos) • Sem o gasto de um ponto de Fúria (3 pontos) • Próximo a prata (4 pontos) • Durante o dia ou durante a noite (5 pontos) • Quando a lua não está visível (6 pontos)"
+    },
+    {
+        "id": "amaldicoado",
+        "nome": "Amaldiçoado",
+        "tipo": "defeito",
+        "valor": {
+            "min": 1,
+            "max": 5
+        },
+        "descricao": "Você tem está em conflito com alguém de habilidades sobrenaturais e ele o amaldiçoou com um efeito específico. Essa maldição pode ter sido preparada durante seu prelúdio ou mesmo em seu nascimento, pode até ser inerente a seus ancestrais. Sua maldição é muito específica e difícil de ser desfeita sem a realização de uma demanda maior ou expiação por qualquer que seja a ofensa que você tenha cometido. Alguns exemplos: • Você desenvolve um odor corpóreo característico em poucos dias que afasta as pessoas de você e reduz seu Carisma a 1 pela duração do mesmo (1 ponto). • Coisas de valor sentimental ou razões funcionais tendem a desaparecer — lembranças, fetiches menores, itens relevantes como as chaves de seu carro ou sua faca favorita (2 pontos). • Você tende a danificar coisas mecânicas, estragar ferramentas ou bugigangas elétricas e causar defeitos em objetos similares (3 pontos). • Relacionamentos parecem desmoronar logo que você começa a se tornar íntimo de alguém. Isso pode manter você afastado de estabelecer qualquer nível de intimidade com sua matilha (4 pontos). • Em momentos críticos, você tende a experimentar falhas catastróficas. Fetiches não funcionam quando você mais precisa deles, armas de fogo falham e você tem uma estranha dificuldade de atravessar a Película em situações emergenciais (5 pontos)."
+    },
+    {
+        "id": "inimigo_do_passado",
+        "nome": "Inimigo do Passado",
+        "tipo": "defeito",
+        "valor": {
+            "min": 1,
+            "max": 3
+        },
+        "descricao": "Você tem um inimigo hereditário, não devido a qualquer coisa que você tenha feito, mas devido a um de seus ancestrais que incorreu em sua ira. A força desse inimigo determina o valor do Defeito. • Um caçador de lobisomens cujos pais foram mortos pelo seu antepassado (1 ponto). • Um mago cujo mentor sofreu nas mãos de um de seus ancestrais (2 pontos). • Um poderoso vampiro ou criatura espiritual que jurou vingança contra os descendentes de seu ancestral (isto é, você) (3 pontos). Você deve trabalhar com seu Narrador para trazer um histórico lógico acerca dos inimigos de seu ancestral, visto que os encontros com seu inimigo do passado podem proporcionar um contínuo arco de histórias para sua crônica. Você precisa possuir o Antecedente: Ancestrais para assumir esse Defeito."
+    },
+    {
+        "id": "transformacao_forcada",
+        "nome": "Transformação Forçada",
+        "tipo": "defeito",
+        "valor": {
+            "min": 1,
+            "max": 4
+        },
+        "descricao": "Certas circunstâncias forçam você a experimentar uma incontrolável mudança de forma. Você pode resistir gastando um ponto de Força de Vontade, mas uma vez que tenha mudado de forma forçosamente, você não pode mudar de volta até que a situação que a provocou tenha terminado. Você pode usar os seguintes exemplos ou criar suas próprias circunstâncias e custos em pontos (com a aprovação do Narrador). • Lua cheia o força a mudar para Crinos (2 pontos). • Você automaticamente muda para Crinos quando seu augúrio mingua (2 pontos). • Estímulos sexuais forçam a mudança (1 ponto para Glabro; 2 pontos para Crinos; 2 pontos para Hominídeo, se você for Lupino). • Álcool ou drogas forçam a mudança (1 ponto para Glabro; 2 pontos para Crinos). • Entrar na Umbra (1 ponto para Glabro, Crinos ou Hispo; 2 pontos para Hominídeo ou Lupino). • O frenesi força a mudança para uma outra forma, exceto Crinos (2 pontos para Glabro ou Hispo; 3 pontos para Lupino; 4 pontos para Hominídeo)."
+    },
+    {
+        "id": "ancestral_insano",
+        "nome": "Ancestral Insano",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você possui um ancestral insano que às vezes assume o controle quando você busca auxílio de seus antepassados. Normalmente, ele aparece apenas sob certas ocasiões em comum, tais como quando Dançarinos da Espiral Negra ameaçam você ou sempre que um certo ritual muito comum é executado em sua presença; teste seu Antecedente: Ancestrais, dificuldade 6. Qualquer sucesso indica que o seu ancestral assume o controle de você até o fim da cena ou até um companheiro de matilha conseguir convencê-lo a desistir do controle por enquanto. Crie seu ancestral, dê-lhe nome e descreva sua loucura. Caso você não interprete esse personagem apropriadamente, seu Narrador pode determinar que você gasta um ponto de Força de Vontade para suprimir seu espírito-ancestral. É preciso ter o Antecedente: Ancestrais para possuir esse Defeito."
+    },
+    {
+        "id": "perder_se_em_atalhos",
+        "nome": "Perder-se em Atalhos",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você considera muito difícil controlar a viagem entre o mundo físico e a Umbra, algumas vezes entrando no mundo espiritual quando não pretendia. Quando estressado, você precisa fazer um teste de Raciocínio + Ocultismo (dificuldade 7) se você se deparar com uma superfície reflexiva para evitar entrar na Umbra involuntariamente. Para ultrapassar a Película, você ainda precisa testar Gnose, mas a dificuldade é -1 que o normal. Se você está intencionalmente tentando percorrer atalhos, você o faz com a dificuldade padrão."
+    },
+    {
+        "id": "marca_do_predador",
+        "nome": "Marca do Predador",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você demonstra emanações de uma natureza predatória. Herbívoros fogem de você, enquanto carnívoros o vêem como uma ameaça em potencial e podem desafiá-lo. Você não pode possuir a Perícia: Empatia com Animais."
+    },
+    {
+        "id": "sinal_do_lobo",
+        "nome": "Sinal do Lobo",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Em você, o folclore sobre os lobisomens é verdadeiro. Como os metamorfos dos mitos e das lendas, você possui sobrancelhas unidas, cabelos crescem nas palmas de suas mãos e os segundo e terceiro dedos de suas mãos são do mesmo tamanho. Você pode até mesmo manifestar um pentagrama na palma de sua mão antes e durante a fase da lua de seu augúrio. Embora muitas pessoas possam simplesmente imaginar que se trata apenas de manifestações físicas bizarras, caçadores de lobisomens que perceberem tais sinais podem suspeitar de sua natureza verdadeira."
+    },
+    {
+        "id": "veu_rasgado",
+        "nome": "Véu Rasgado",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Diferente da maioria dos Garou, sua forma Crinos não provoca o Delírio nos mortais. Isso o torna particularmente vulnerável a caçadores de lobisomens, que consideram você mais fácil de se perseguir até seu caern, colocando os membros de sua seita em um risco considerável."
+    },
+    {
+        "id": "futuro_negro",
+        "nome": "Futuro Negro",
+        "tipo": "defeito",
+        "valor": 5,
+        "descricao": "Você está sob uma maldição futura, marcado pelo Destino para um terrível fim. Todos os seus esforços no fim não resultarão em nada. De tempos em tempos, você recebe lampejos de visões a respeito de seu destino final, fazendo com que você sofra prematuramente. Você pode superar esse ânimo ruim gastando Força de Vontade, mas apenas superando temporariamente. Mais cedo ou mais tarde, você irá encarar seu destino (um assunto deixado a cargo de seu Narrador, mas que irá acontecer durante o curso da crônica — por outro lado, esse Defeito pode não valer pontos). No entanto, nesse meio tempo você pode tentar alcançar alguma coisa que vala a pena, através de um senso de liberdade e abandono visto que você sabe que a menos que a situação o leve diretamente a sua condenação final, você tem uma boa chance de sobreviver e ser bem sucedido. Esse Defeito funciona bem aliado ao Antecedente: Profecia (veja a seguir), no qual permite você sobreviver a desgraças menores em potencial à medida que você caminha para sua verdadeira danação que o aguarda."
+    },
+    {
+        "id": "macula_do_apodrecimento",
+        "nome": "Mácula do Apodrecimento",
+        "tipo": "defeito",
+        "valor": 7,
+        "descricao": "De algum modo, a Wyrm tocou você e deixou sua mácula em seu espírito. Quando outro Garou invoca o Dom: Sentir a Wyrm, você indica fortemente como um ser maculado pela Wyrm. A mácula é inata e não pode ser removida pelo Ritual de Purificação (que apenas causa dor e sofrimento a você). Servos da Wyrm perturbam seu sono, tentando seduzi-lo para servir à Destruidora. Você recebe +2 em todas as dificuldades para resistir aos poderes de seus ―colegas‖ servos da Wyrm — poderes Fomori, Dons dos Dançarinos da Espiral Negra, Encantos dos Malditos, Disciplinas vampíricas e afins. Apenas sua matilha pode preservar você de sucumbir a Wyrm, lhe proporcionando apoio e auxílio. Libertar-se desse Defeito exige uma grande demanda e pode proporcionar o cerne de uma crônica solo. Livro dos Augúrios Galliard"
+    },
+    {
+        "id": "frio_em_batalhas",
+        "nome": "Frio em Batalhas",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você não perde a cabeça quando peles e sangue começam a voar. Você continua sob controle durante o combate, não importa o quão caóticas as coisas fiquem. Adicione 1 ao nível de Iniciativa do personagem. Se o Galliard entrar em frenesi, esse benefício é perdido."
+    },
+    {
+        "id": "tangencial",
+        "nome": "Tangencial",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Não importa o quanto você se esforce tentando, suas histórias tendem à divagar. Você não consegue manter-se no tema durante uma discussão ou durante uma atuação, à não ser que você ensaie muito antes o que irá dizer ou fazer. Acrescente 2 pontos a todas as dificuldades que envolvam Expressão (à menos que esteja recitando algo que esteja escrito ou orações memorizadas), e certifique-se de interpretar esse Defeito. Ahroun"
+    },
+    {
+        "id": "perito_em_combate",
+        "nome": "Perito em Combate",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você investiu muitas horas em combates realmente letais e você praticou o suficiente para se atrapalhar de forma realmente ruim. Você pode ignorar uma falha crítica num teste de ataque ou esquiva a cada sessão."
+    },
+    {
+        "id": "estilo_de_luta_diversificado",
+        "nome": "Estilo de Luta Diversificado",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "Você tem praticado um leque realmente vasto de diferente método de combate e pode aplicar toda a extensão de seu conhecimento na situação. Você nunca encara penalidades em combate por usar armas exóticas ou incomuns, podendo facilmente identificar qualquer arma ou estilo de luta que você veja."
+    },
+    {
+        "id": "coragem_contagiante",
+        "nome": "Coragem Contagiante",
+        "tipo": "qualidade",
+        "valor": -5,
+        "descricao": "Embora seja dever de todos os Ahroun inspirar coragem no campo de batalha, ela vem mais naturalmente para alguns que para muitos; até mesmo entre os vigorosos Garou, sua coragem e determinação são lendárias. Sempre que um Dom ou poder que gere medo seja usado em você, ajuste a dificuldade do teste para 2 pontos a seu favor. Se uma habilidade similar é usada sobre um ou mais dos seus companheiros de matilha e você está na linha de visão, ajuste a dificuldade para 1 ao seu favor."
+    },
+    {
+        "id": "cicatrizado",
+        "nome": "Cicatrizado",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "A incessante brutalidade da existência como um Ahroun tem finalmente recaído sobre sua pele. Suas respostas emocionais de todos os tipos estão de algum modo atrofiadas e praticamente nenhuma emoção aflora em você. Assustador. A dificuldade de todos os testes de Empatia feitos por você são elevadas em 2, caso a dificuldade seja ajustada para além de 9, você não pode arriscar o teste. Hubris (Defeito: 1-4 pontos) Você está firmemente convencido que seu próprio poder é superior a praticamente qualquer um, que você possui benefícios muito além de sua posição atual e que os outros Garou, especialmente os de augúrios menos combativos, são mais estorvos que auxiliares. Isso não torna sua arrogância óbvia para todo mundo, você pode subestimá-los muito bem ou expressá-la de formas limitadas. Mas sua visão estreita o deixa cego para muitas das sutilezas do Mundo das Trevas e os níveis superiores dessa fraqueza de sua mentalidade pode alcançar o solipsismo. Esse Defeito é inicialmente direcionado para personagens do Narrador, já que ele pode fazer um personagem difícil de cooperar com uma matilha e frustrar a interpretação. Um jogador que quer aplicá-la ao seu personagem poderia pensar duas vezes com o Narrador e com os outros jogadores primeiro. Guardiões dos Caerns"
+    },
+    {
+        "id": "sentidos_compensatorios",
+        "nome": "Sentidos Compensatórios",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Se a sua deformidade de impuro envolve sentidos enfraquecidos, como ter dificuldade de audição ou lhe faltar o sentido do olfato, outro grupo de sentido ficou mais forte para compensar tal fato. Escolha outro grupo de sentidos e diminua a dificuldade em 2 para qualquer teste que envolva esses sentidos."
+    },
+    {
+        "id": "mascara_fantasma",
+        "nome": "Máscara Fantasma",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Sua deformidade de impuro é ocultável com algum trabalho. Por exemplo, você pode ser capaz de esconder seu terceiro olho sob uma cicatriz ou talvez você tenha um encanto de uma fada ou mago que oculta sua deformidade. Isso serve muito bem a você, a menos que outros lobisomens descubram. Eles lhe odiarão por ser um covarde além de qualquer outro preconceito que eles tenham contra impuros e você será objeto de escárnio para os outros impuros."
+    },
+    {
+        "id": "despercebido",
+        "nome": "Despercebido",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Talvez eles apenas sejam educados ou a sua deformidade não importa para eles. Qualquer que seja a razão, os humanos, incluindo Parentes, tendem a ignorar sua deformidade de impuro. Alguns podem até achá- la interessante ou exótica. Os lobisomens, por outro lado, tendem a olhar para você com suspeitas — isso parece muito estranho para eles. Os lobos são ainda menos piedosos."
+    },
+    {
+        "id": "protese",
+        "nome": "Prótese",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Se o seu personagem possui uma deformidade física ou membros faltantes, você conseguiu uma prótese para compensar o fato. Isso não significa que sua deformidade foi curada; você não pode usar a prótese sempre e muitos hominídeos e lupinos não gostam delas, e você ainda possui a deformidade e suas limitações. Porém, essas próteses podem ajudar a suavizar algumas de suas penalidades quando usadas (a cargo do Narrador). Essa é uma Qualidade comum entre os impuros Andarilhos do Asfalto."
+    },
+    {
+        "id": "estrago_duplo",
+        "nome": "Estrago Duplo",
+        "tipo": "defeito",
+        "valor": 5,
+        "descricao": "Você não nasceu com apenas uma, mas sim duas deformidades de impuro. Elas são incuráveis e não podem ser eliminadas através de pontos de experiência ou eventos durante a crônica. Gaia marcou você para algo em especial ou amaldiçoou você por alguma razão desconhecida."
+    },
+    {
+        "id": "metamorfo",
+        "nome": "Metamorfo",
+        "tipo": "qualidade",
+        "valor": -6,
+        "descricao": "Sim, é a mesma Qualidade do Guia do Jogador (pág. 21). Porém, há um aspecto nessa Qualidade que a torna especialmente útil para os impuros: os impuros com essa Qualidade nascem capazes de mudar suas formas de uma para outros. Os impuros com tal habilidade são aqueles que você ouve falar que mudam de infantes humanos para filhotes de lobo quando ainda estão no berço (Fengy, do cenário do Central Park, é um exemplo). Mesmo quando um impuro com essa Qualidade cai inconsciente, a dificuldade de assumir a forma desejada é reduzida para 7. Ninguém conhece seu corpo e suas limitações melhor do que um impuro abençoado com essa Qualidade. Cria de Fenris"
+    },
+    {
+        "id": "tolerancia_ao_alcool",
+        "nome": "Tolerância ao Álcool",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Os Fianna se orgulham de fazer cerveja, mas os Crias ainda são capazes de ensinar aos Fianna uma coisa ou duas sobre beber. Com um teste bem sucedido de Vigor (dificuldade 7), um Garou com esta Qualidade pode se livrar dos efeitos da intoxicação, sem sofrer penalidades de coordenação que normalmente poderiam afetar um guerreiro bêbado. Esta Qualidade funciona contra todos intoxicantes naturais, apesar de não funcionar contra venenos. Normalmente, um lobisomem com este nível de tolerância tem muito mais dificuldade de ficar bêbado, o que pode estragar um pouco a diversão."
+    },
+    {
+        "id": "gregario",
+        "nome": "Gregário",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Apesar da maior parte dos Crias de Fenris não poder conquistar o Antecedente Contatos, você é um pouco mais expansivo do que seus colegas de tribo e conseguiu fazer poucas conexões e conhecidos aqui e ali. Você tem um número pequeno de contatos menores, como descrito no livro básico Lobisomem (pág. 121); quando quer que você precise entrar em contato com um, você pode testar três dados, dificuldade 7, para localizar a pessoa de que precisa. Contudo, esta vantagem não dá contatos maiores."
+    },
+    {
+        "id": "maldicao_de_wotan",
+        "nome": "Maldição de Wotan",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "A Maldição de Wotan caiu em sua linha de sangue e por azar se manifestou em você. Você é vulnerável ao poder dos mortos que caminham, os servos do Caolho. Quando quer um vampiro, aparição ou outra entidade morta-viva tente afetá-lo com um de seus poderes sobrenaturais, a dificuldade para fazer isso é reduzida em -1. Essa maldição faz de você um elo fraco em muitas operações, o que pode afetar sua posição entre companheiros Fenrir. Fianna Segunda Visão (Qualidade: 2-6 pontos) Até mesmo uma gota de sangue feérica produz efeitos estranhos nos mortais e muitos Fianna têm mais que apenas uma gota. Aqueles que possuem a Visão têm uma limitada e incontrolável clarividência e predição, que varia entre uma certa intuição à habilidade de ver cenas do futuro. Por dois pontos, você pode saber quem está chamando antes de tirar o telefone do gancho ou sente que um visitante está vindo. Desorientadores flashes de conhecimento e súbitas visões do futuro e de outros lugares são as marcas registradas da Visão em níveis altos. Por seis pontos, as visões são relativamente detalhadas e extensas. As visões podem ser de eventos reais ou metafóricos, mas são normalmente enlouquecidamente difíceis de desvendar até que o evento predito ocorra. A Visão é imprevisível e vem sem ser convidada, em sonhos ou acordado, como um ―sentimento‖ ou um cegante flash de conhecimento. O Narrador deve usar isso mais para o bem que para o mal, mas os jogadores não devem de forma alguma confiar na Visão como um meio certo de ter avisos com antecedência. Os futuros revelados podem ser sombrios e ações tomadas para prevenir as ocorrências normalmente às precipitam. As pessoas com uma Visão muito ativa podem ser muito infelizes e tristes."
+    },
+    {
+        "id": "sono_raro",
+        "nome": "Sono Raro",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Como com a Visão, esta Qualidade é produzida por um pouco de mágica no sangue. Embora o descanso ainda seja requerido após o esforço, o sono raramente o é. Uma hora por noite é suficiente e mesmo uma hora a cada três dias não deixarão o Fianna mais do que com um pouco de olhos avermelhados. Essas pessoas costumam se descobrir fazendo mais do que o que deviam de trabalho de vigia. Tabu (Defeito: 1-7 pontos) Um tabu é uma proibição ou ordem mística feita para tornar a vida difícil. Um mandamento central da vida celta, um tabu era uma marca de distinção, um sinal do destino. Muitos dos Fianna das lendas carregavam pelo menos um tabu, carregado desde seu nascimento ou colocado sobre eles por um espírito ou um druida. Nas antigas lendas, os tabus eram muito comuns entre as pessoas de nota, de heróis até reis e druidas, e os maiores possuíam múltiplos tabus. Apesar de seus maiores esforços, os heróis acabavam quebrando o tabu, uma circunstância que sempre lançava um desastre, não necessariamente de imediato, mas em breve (Cuchulain enfrentou uma escolha entre seus dois tabus — ―Nunca rejeitar hospitalidade‖ e ―Nunca comer carne de cachorro‖ — e logo caiu em batalha). O valor em pontos de um tabu começa com a base de um a quatro pontos, dependendo de quão difícil é evitar (ou quebrar) o dogma. Um tabu menor (de circunstâncias facilmente evitadas) como ―Nunca beber brandy sentado em uma mesa‖ vale um ponto. ―Honrar cada segunda solicitação‖ pode valer dois pontos, enquanto ―Nunca ferir um Garou, exceto Espiral Negra‖ valem três pontos e ―Nunca ferir um Garou, incluindo os Dançarinos‖ valem quatro. As severidades das conseqüências adicionam pontos ao valor do Defeito (exemplos: Todos os pêlos caem: +0; a perda de Dons, ou todas as dificuldades aumentar em 1: +1; ostracismo por todos os Garou: +2; morte eminente: +3). Um tabu quebrado que possa ser perdoado através de uma demanda ou reparado vale um ponto a menos. Filhos de Gaia"
+    },
+    {
+        "id": "pai_distante",
+        "nome": "Pai Distante",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Os Filhos de Gaia adotam tantos filhotes que alguns Filhos mantêm laços familiares com pais Garou em outras tribos. Esta Qualidade simplesmente significa que você vem de um pai ou mãe que é Garou (e não Parente) em outra tribo. (Filhos de Gaia homens podem clamar direito de antepassado dentre as Fúrias Negras). A tribo precisa ser especificada e o Narrador precisa dar permissão para você escolher a tribo especificada. Em alguns casos ele pode recusar. O Narrador vai criar seu pai, mas não irá revelar tudo sobre ele para você. No geral, esta Qualidade funciona como um ponto em Aliados dentro de outra tribo, no entanto, ele também tende a gerar seus próprios enredos secundários."
+    },
+    {
+        "id": "estimulador",
+        "nome": "Estimulador",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você inspira todos ao seu redor para grandes realizações. (Você precisa interpretar isso, é claro). Seja pela fala, escrita ou guiando, por exemplo, você dá a qualquer um que trabalhe com você uma razão para continuar e esperança de ser bem sucedido. Você tem um -2 em dificuldades de testes Sociais e fornece a cada esforço feito em grupo +1 em sua parada de dados total."
+    },
+    {
+        "id": "ingenuo",
+        "nome": "Ingênuo",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você é desesperadamente ingênuo sobre a natureza da realidade e vê tudo através de ―lentes cor-de- rosa‖. Você pode ter sido criado em riqueza e privilégio ou ter sido vítima de uma repressão dos abusos e traumas. Você é relutante em suspeitar de maldade ou jogo sujo, o que pode ser um problema sério. A dificuldade para qualquer jogada para detectar más intenções de outras pessoas, desde o Dom Sentir a Wyrm até jogadas de Empatia, é aumentada em 2."
+    },
+    {
+        "id": "vegan",
+        "nome": "Vegan",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você não pode comer comida que venha do corpo de um animal. Você também precisa evitar usar produtos animais, como couro, peles ou lã. Se carne o suficiente entrar em sua boca, o Narrador pode forçá-lo a fazer uma jogada de Força de Vontade para evitar vomitar. Isto o torna mal acolhido na maioria dos eventos sociais (especialmente entre lobos) e você não pode caçar (exceto espíritos)."
+    },
+    {
+        "id": "charach",
+        "nome": "Charach",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você é conhecido por ter um(a) amante Garou. Você pode estar realizando o Ritual das Nuvens e Chuva (veja acima), ou apenas estar envolvido romanticamente. O Narrador vai criar este personagem para você, mas você precisa estar alerta de que qualquer charach é tratado pelos Garou (até alguns Filhos de Gaia) como um criminoso pervertido que merece a morte. Outros Garou podem ficar muito furiosos com você por ter quebrado a Litania e podem insistir em puni-lo. Você automaticamente começa o jogo com um ponto a menos de Renome e precisa perder este ponto em Honra, se possível. Dócil (Defeito: 1-3 pontos) Por bem ou mal, você é dócil por natureza. Sua distância do ―lobo‖ é perceptível a outros. Eles podem usar as palavras ―domesticado‖ ou ―cão‖. Alguns Filhos de Gaia lupinos que possuem este Dom são de aparência canina, de certa forma. Para cada ponto de Dócil que você tenha, sua Fúria máxima é diminuída em 2 e nunca pode ser comprada acima daquele nível."
+    },
+    {
+        "id": "desiludido",
+        "nome": "Desiludido",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Se alguém começar com aquela merda de paz e amor de novo, você apenas pode perder a cabeça. Sua longa luta pela paz já deu o que tinha que dar. Você é depressivo, cínico e propenso ao Harano, a dificuldade de todas as jogadas de Força de Vontade é aumentada em 1."
+    },
+    {
+        "id": "ahimsa",
+        "nome": "Ahimsa",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Você fez um juramento de não matar nenhum animal grande o bastante para ser visto (isso não inclui germes, plantas, pequenos animais etc). Isso inclui o Defeito Vegan (que você não pode escolher junto a este) assim como deliberadamente infringir dano letal. Você pode lutar (você vai precisar), mas deve se conter a apenas derrotar seus oponentes, não matá-los. Muitos Filhos fazem este juramento. Se você matar acidentalmente, você não vai perder os pontos extras gerados por este Defeito, mas se você deliberadamente tomar a vida de outro ser, o Narrador irá remover 3 pontos do seu personagem em qualquer lugar que ele ache justo. Fúrias Negras"
+    },
+    {
+        "id": "notavelmente_fertil",
+        "nome": "Notavelmente Fértil",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "O personagem com essa Qualidade é mais propensa a se tornar um Parente que qualquer outro Garou é. Embora os Garou não sejam substancialmente menos férteis que os humanos, um Garou com Notavelmente Fértil é duas vezes mais propenso a engravidar ou gerar uma gravidez após um simples contato sexual desprotegido que um humano padrão. Os filhos de um personagem com essa Qualidade não são mais propensos a serem um Garou do que os filhos de outro personagem sem essa benção. Os efeitos específicos da Qualidade são deixadas a cargo do Narrador e o jogador envolvido, especialmente se o personagem for fêmea. Por razões óbvias, impuros não pode assumir essa Qualidade."
+    },
+    {
+        "id": "filha_do_caern",
+        "nome": "Filha do Caern",
+        "tipo": "qualidade",
+        "valor": -5,
+        "descricao": "Um personagem Garou com a Qualidade Filha do Caern nasceu durante um Ritual de Parir o Caern (veja página 75). Seu nascimento por si só é considerado um grande sinal profético; o personagem recebe 1 dado adicional em todos os testes Sociais ao líder com os Garou de sua seita. Além disso, os espíritos totêmicos do caern onde o personagem nasceu têm uma atenção especial por ele; recebendo assim um ponto grátis no Antecedente Totem, enquanto o totem de sua matilha for um dos espíritos totêmicos da seita. Esse histórico também pode trazer uma atenção negativa ao personagem. Caso ele falhe em qualquer tarefa, os Theurges e Galliards de sua seita provavelmente lamentarão e rangerão seus dentes, visto que o destino do personagem é dito estar ligado ao do caern. O personagem pode receber um mentor ou dois que ele não precisa buscar ou requisitar, devido à necessidade da seita manter sua segurança e integridade. É certo que ele receba uma atenção indesejada da população local da Wyrm, que crê — provavelmente corretamente — que o primeiro passo para corromper o novo caern é forçar o personagem à Espiral Negra, corrompendo-o ao invés de simplesmente matá-lo. Afinidade/Inimizade com um Campo (Qualidade/Defeito: 2 pontos) Afinidade com um Campo indica que um campo em particular das Fúrias Negras tem uma afeição especial por você. Talvez você tenha prestado um grande favor ou eles estejam tentando persuadir você a se unir ao seu grupo. Independente disso, você tem um bônus de -1 na dificuldade nos testes Sociais ao interagir com aquele campo. Você não deve ser um membro desse campo ao assumir essa Qualidade, apesar que você pode mudar para esse campo durante o jogo caso a crônica permita. Inimizade com um Campo indica que um campo em particular das Fúrias Negras não nutre simpatia por você. Isso funciona melhor quando o personagem é membro de um campo em particular no qual o outro campo possui oposição, como a Irmandade e a Ordem da Mãe Misericordiosa, ou as Bacantes e as Amazonas de Diana. Ou talvez você não esteja num dado campo, mas que você fez alguma coisa para ofendê-lo. Não importa a causa, esse Defeito dá a você +1 nas dificuldades dos testes Sociais ao interagir com aquele campo. Infértil (Defeito: 1 ou 3 pontos) Seu personagem é infértil, por qualquer que seja a razão; talvez ele tenha contraído uma doença virulenta quando jovem, sofrido uma cicatriz de batalha no abdômen ou vítima de uma complicação abortiva antes de sua Primeira Mudança. Ela não pode gerar qualquer criança. Isso é causa de alguma diminuição de status entre as Fúrias Negras; ela sofre a perda de um 1 ponto de Honra. Se o personagem nunca gerou uma criança, então ele é considerado uma Donzela até ele alcançar a menopausa e se tornar uma Anciã — essa é a versão de 3 pontos desse Defeito. Ele não pode aprender quaisquer Dons ou rituais da Mãe. Se o personagem teve filhos e simplesmente não pode ter mais, esse é um Defeito de 1 ponto. A critério do Narrador, uma versão tardia desse Defeito pode levar o personagem a ser considerado uma Anciã. Garras Vermelhas"
+    },
+    {
+        "id": "ancestral_hominideo",
+        "nome": "Ancestral Hominídeo",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "O personagem deve ter pelo menos um ponto no Antecedente Ancestrais para comprar essa Qualidade. Em algum lugar das distantes névoas do passado, você teve um parente nascido de homens. Talvez um parente hominídeo de sua prole com um lobo que era Parente dos Garras Vermelhas, talvez um parente mais recente nasceu em outra tribo. De qualquer forma, você tem uma leve melhor compreensão do pensamento humano que a maioria dos lupinos. Reduza a dificuldade dos testes envolvendo lógica e pensamento abstrato em um, as dificuldades de usar Ancestrais para acessar Habilidades como Ofícios, Armas Brancas, Etiqueta e Políticas também são diminuídas em um (Armas de Fogo e Computador provavelmente ainda estão fora dos limites). Por outro lado, se algo de sua linhagem chegar até os outros, você pode perder um pouco de Honra temporária, dependendo de em que tipo de seita você vive."
+    },
+    {
+        "id": "garou_do_inverno",
+        "nome": "Garou do Inverno",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "Você foi escolhido como um Garou do Inverno. Ao menos que você seja membro de uma matilha apenas de Garras Vermelhas, você provavelmente é um espião e investigador de sua tribo e está agindo sob ordens de um superior. Em termos de jogo, você efetivamente possui Mentor 3 e pode esperar favores da sua tribo (incluindo ter o Ritual da Falsa Justiça, acima, executado em você, caso necessário). Você pode também aprender Dons das Matilhas do Inverno e receber Renome extra de sua tribo por seus esforços. Porém, espera- se que você mate humanos a qualquer oportunidade e a única desculpa que sua tribo irá aceitar é que sua matilha estava olhando e teria descoberto sua aliança. Se você for descoberto, os Garras Vermelhas irão ou expulsá-lo ou matá-lo, ao invés de deixar que a verdade sobre o Conselho do Inverno se tornar de conhecimento comum na Nação Garou. Atenção Humana (Defeito: 1/3/5 pontos) Humanos o avistaram em um lugar onde lobo nenhum deveria estar e agora estão tentado encontrá-lo novamente. Esse Defeito assume que você foi visto em um local que freqüenta (como os arredores da seita) e não pode ser simplesmente evitado de agora em diante. Por um ponto, as notícias de ―lobos em nossa floresta‖ se espalharam, mas não atraíram muita atenção negativa, apesar de que cientistas podem chegar para colocar etiquetas e soltar seus Parentes (o que irá levar a outros problemas). Por três pontos, os locais se sentem ofendidos pela infração lupina de ―suas‖ terras e começaram a carregar seus rifles e procurar por lobos. Por cinco pontos, você atraiu a atenção de um ser sobrenatural ou de seres que reconhecem (ou pelo menos suspeitam) de sua verdadeira natureza — um grupo local de Imbuídos, um vampiro poderoso ou uma ramificação da Pentex. Peregrinos Silenciosos"
+    },
+    {
+        "id": "visao_espectral",
+        "nome": "Visão Espectral",
+        "tipo": "qualidade",
+        "valor": -4,
+        "descricao": "Essa qualidade permite (ou talvez cause) flashes de visões da Umbra Negra. Ela não está sempre em efeito, o que é uma benção. Qualquer criatura viva que pudesse ver tudo o que acontece na terra dos mortos, sem dúvida, enlouqueceria — especialmente uma vez que muitos que possuem a visão a desenvolve na infância. A visão vem até o Peregrino (ou Parente Peregrino) quando algo importante está acontecendo na Umbra Profunda (um fantasma poderoso está presente, alguém ou algo está observando o lobisomem) ou em lugares que são importantes para os mortos (o local, ou um objeto em seu interior, é de grande importância para um fantasma)."
+    },
+    {
+        "id": "dom_de_wepauwet",
+        "nome": "Dom de Wepauwet",
+        "tipo": "qualidade",
+        "valor": -5,
+        "descricao": "De algum jeito, de alguma forma, o personagem não sofre da maldição de Sutekh. Os espíritos de seus ancestrais vêm até ele em momentos de necessidade, como se ele tivesse algum tipo de canal místico ou ímã espiritual que os chama de suas andanças perdidas ou aprisionamento. O personagem personifica a grande esperança da tribo dos Peregrinos Silenciosos — e muitos de seus piores medos também. Após comprar essa Qualidade, o jogador pode comprar o Antecedente Ancestrais normalmente, como para outras tribos dos Garou. O personagem também recebe três pontos temporários de Renome: um em Honra, um em Glória e um em Sabedoria. As expectativas serão grandes para os feitos futuros desse personagem, o que pode ser um benefício ou um revés, dependendo da situação. Portadores da Luz Interior"
+    },
+    {
+        "id": "marcas_de_nascenca_mewa",
+        "nome": "Marcas de Nascença Mewa",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Seu corpo decorado com pequenas marcas de nascença marrom ou rosa, cada uma não maior que uma moeda. Essas marcas de nascença, conhecidas na Índia como mewas, são consideradas ―sagradas‖ e aqueles portadores de tais marcas são tratados com honra. As marcas também são usadas como forma de adivinhação e geralmente são similares a padrões estelares ou constelações. Aqueles com essas marcas possuem um dado extra em todos os testes Sociais envolvendo Portadores da Luz Theurges. Essa qualidade não pode ser assumida por um Portador da Luz impuro como a deformidade ―Marcas de Nascença‖."
+    },
+    {
+        "id": "alma_tranquila",
+        "nome": "Alma Tranqüila",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Seus ancestrais eram particularmente calmos e espirituais. Como é extraordinariamente simples para você entrar em um estado meditativo como transe. Além disso, a meditação permite uma vantagem que outros podem não perceber. Uma tentativa bem-sucedida de meditação (3 ou mais sucessos) combinada com pelo menos uma hora destinada a meditação dá ao usuário um ponto temporário de Força de Vontade."
+    },
+    {
+        "id": "ancestral_enfurecido",
+        "nome": "Ancestral Enfurecido",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Um de seus ancestrais era um Portador atípico. Ele não apenas era distante do caminho da moderação buscado pela maioria da tribo, mas ele abraçava a furiosa ira e permitia que a Fúria o consumisse. Como tal, sempre que um teste de Fúria alcançar três sucessos (e não quatro), você entra em frenesi. Ao fazer isso com freqüência pode dar a você a vergonha de sua tribo, junto com um dano potencial ao seu Renome Sabedoria. Presas de Prata"
+    },
+    {
+        "id": "heranca_notavel",
+        "nome": "Herança Notável",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Essa Qualidade pode significar uma de duas coisas. Pode significar que o personagem é de uma família que tem renome em particular entre os Garou por suas ações durante os séculos. Notáveis exemplos incluem os Morningkill, os Delacourt e a Dinastia Tvarivich. Esta qualidade não é a mesma coisa que o Antecedente Raça Pura, que representa a relativa perfeição da linhagem Garou expressa em um indivíduo. Esta Qualidade representa a fama geral cedida à família pelas ações de Garou e Parentes. O personagem tem -1 de dificuldade em testes Sociais com outros Garou ou Parentes cientes da sociedade lobisomem. Esta Qualidade vem com expectativa de que o lobisomem corresponda ao nome da família. Se ele falhar, pode descobrir os benefícios desta Qualidade desaparecendo com o tempo, a medida que as histórias de suas falhas começam a pesar mais que o alto status que a família recebe. Alternativamente, esta Qualidade pode representar a presença numa família famosa nos círculos humanos: uma família real como os Windsor no reino Unido, ou uma dinastia política como os Bush e os Kennedy nos EUA. Embora a Qualidade não transfira nenhuma propriedade ou ganho financial, ela pode carregar um título em uma monarquia. O personagem pode esperar convites para as melhores festas e dificuldade -1 em todos os testes Sociais quando lidando com humanos cientes de sua herança."
+    },
+    {
+        "id": "hubris",
+        "nome": "Hubris",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Os Presa de Prata são os filhos escolhidos pelo Falcão e os líderes nomeados da Nação Garou. Eles são mais puros em suas linhagens que seus primos das outras tribos são. Eles têm muito, de fato, para se orgulharem. Entretanto, alguns membros da tribo levam este orgulho longe demais, passando da arrogância à hubris. Eles levantam seus narizes para seus companheiros de ―tribos inferiores‖ e mesmo membros de sua própria tribo de linhagens menos puras. Consideram-se os mais adequados lobisomens para qualquer tarefa e sempre se assumem como alfa de qualquer grupo. Eles se esforçam para manter o desdém e complacência fora de suas vozes quando lidam com outros e às vezes irritam os espíritos com seu comportamento impensado. Em resumo, um personagem com esse Defeito é um completo, mas nobre, pé-no-saco. Seu comportamento rende a ele uma dificuldade de +2 em todos os testes Sociais com aqueles inferiormente notáveis (o que são praticamente todos). Ele também tende a superestimar suas habilidades, colocando a si mesmo e os outros por perto em perigo."
+    },
+    {
+        "id": "propenso_ao_harano",
+        "nome": "Propenso ao Harano",
+        "tipo": "defeito",
+        "valor": 4,
+        "descricao": "Harano, a terrível depressão e tristeza que pode tornar o mais poderoso e renomado dos guerreiros Garou menos útil do que um filhote recém transformado, pode afligir qualquer membro de qualquer tribo. Contudo, parece que certos membros dos Presa de Prata estão mais propensos a pequenas, ainda que menos debilitantes, doses de Harano que podem impedir sua eficácia como guerreiro de Gaia e líderes dos Garou. Personagens que sofrem deste defeito estão propensos a períodos de depressão profunda, indolência e mudanças de humor. O jogador deve fazer um teste de Força de Vontade a cada cena em que o lobisomem sofra alguma forma de revés. Se ele falhar, o Presa de Prata cai num período de Harano temporário. Ele pode se tornar carrancudo e inativo, ou repentinamente despertar para uma atividade auto-destrutiva. Em termos de regras, as percepções do Presa de Prata ficam distorcidas e ele perde um dado em todas suas paradas. Se o jogador tiver uma falha crítica, o personagem adquire uma Perturbação temporária das listadas neste livro (veja abaixo). O jogador pode atrasar o ataque do Harano por uma única cena gastando um ponto de Força de Vontade. Roedores de Ossos"
+    },
+    {
+        "id": "batalhador",
+        "nome": "Batalhador",
+        "tipo": "qualidade",
+        "valor": -1,
+        "descricao": "Através do trabalho duro e de diligência, você conseguiu sair das ruas. Você pode ter dinheiro suficiente para uma casa própria, comida (barata) todo dia e até alguns poucos supérfluos. Entretanto, todos os seus recursos estão amarrados a manter sua casa e você deve lutar para isso. Como um Roedor de Ossos, você não pode ter pontos no Antecedente Recursos. Daí, juntar alguma grana para possíveis imprevistos é difícil para você — parece que sempre há dívidas e contas a pagar. Você tem, porém, um jeito de arranjar uma grana extra de vez em quando. Trabalhar duro pode ser pesado, mas é de longe muito melhor que viver nas ruas. Os tempos vagos são críticos para um personagem que trabalham ali. Como ele faz parte da crônica, seu personagem não pode gastar o dia todo andando por aí e procurando por aventura. Receber um salário requer pelo menos de 40 a 50 hs de trabalho por semana; presumivelmente isso acontece nas horas fora das sessões de jogo. Como esta qualidade limita os tipos de história que o Narrador pode criar, ela obviamente requer a sua aprovação. Seu personagem, contudo, irá ter uma casa, um endereço e até um telefone. No começo de cada capítulo da crônica, o Narrador testa seu Raciocínio; a cada dois sucessos, aumente o equivalente de um ponto no Antecedente Recursos pelo resto do capítulo. (Se você tiver raciocínio 4 ou 5, pode rolar novamente os 10). Porém, as palavras ―seguro desemprego‖ não significam nada para você. Numa falha crítica, você perde tudo e deve trabalhar duro e começar tudo de novo (como descrito abaixo). Você pode também perder essa Qualidade temporariamente se deixar a cidade ou não puder trabalhar por algum motivo. Se por uma falha crítica, ou por vontade própria você perder essa Qualidade, você pode voltar à sarjeta a qualquer momento. Seu síndico está sempre preparado para colocá-lo no olho da rua num piscar de olhos e suas contas estão quase sempre vencidas. Voltar a trabalhar novamente requer pelo menos um mês à toa e um número de pontos de experiência igual ao custo dessa Qualidade. A Qualidade Batalhador é muito comum entre o campo dos Delatores, que geralmente sustentam empregos para disfarçar seus métodos de reunir informações, mas como você pode ver, eles têm problemas para mantê-los por muito tempo."
+    },
+    {
+        "id": "vergonha",
+        "nome": "Vergonha",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Seus ancestrais Garou distantes não foram Roedores de Ossos. Em algum lugar pelo passado, alguns de seus ancestrais se envergonharam de alguma forma. Como resultado, seus descendentes são tão infames ou ultrajados que apenas os Roedores de Ossos puderam o acolher. E esta reputação lhe precede, é claro. A boa notícia é que você ainda pode contatar as forças de seus ancestrais mais estimados. Trate isso como um ponto no Antecedente Ancestrais. Nenhum desses ancestrais foi um Roedor de Ossos (é claro) e nenhum deles é mais recente do que três séculos atrás. Isso é o mais perto que um Roedor de Ossos pode chegar do Antecedente Ancestrais (sem usar as regras opcionais do Narrador, mencionada anteriormente, é claro). A má notícia é que os anciões podem descobrir ou até reconhecer sua linhagem vergonhosa. Toda vez que você conhecer um ancião, o Narrador deve testar a sua Glória permanente contra dificuldade igual ao seu posto +5. Se obtiver ao menos um sucesso, o passado negro de sua família é revelado. Em adição a qualquer complicação na história, você aumenta em 2 a dificuldade de todos os Testes Sociais em jogadas que envolvam os anciões da seita. (Se estiver usando as regras opcionais de Fraquezas Tribais, esta penalidade se acumula com o +1 na dificuldade dos Roedores de Ossos). Esse mecanismo de jogo não impede que algum rival (ou um Senhor das Sombras inquisitivo) descubra esse segredo sombrio por si próprio como parte da história do jogo. De fato, uma crônica pode envolver toda uma trama secundária sobre um Roedor de Ossos que tenta se aprofundar nos conhecimentos de seus ancestrais enquanto esconde isso dos anciões da seita. Os ancestrais podem fazer mais do que conceder um dado em uma parada de dados ocasionalmente — eles podem também garantir-lhe um conhecimento esquecido ou tentações que podem afetar o destino de um Roedor de Ossos para sempre."
+    },
+    {
+        "id": "camaradas_ratkin",
+        "nome": "Camaradas Ratkin",
+        "tipo": "qualidade",
+        "valor": -3,
+        "descricao": "Seu pobre coitado. Os Ratkin gostam de você. Por alguma razão, uma matilha inteira de Ratkin tem um interesse especial em você. Em um bom dia, eles irão infestar sua vida e resolver um dos seus probleminhas — algumas vezes o embaralhando num problema completamente diferente. Num dia muito bom, eles decidem que um de seus inimigos é inimigo deles também, fazendo da vida da pobre vítima um inferno (isto é, pior do que a sua). E então tem os dias ruins, aqueles em que eles aparecem inesperadamente perguntando por um lugar para quebrar, comem toda sua comida, pegam emprestado algumas de suas coisas ou, geralmente, fazem de sua casa um inferno. Você aprendeu a ser muito tolerante com eles, pois se não for, é a sua vida que vira um inferno. Apenas um Garou na matilha pode ter essa Qualidade. Os Ratkin têm uma chance de se manifestar aleatoriamente uma vez a cada quatro sessões de jogo. O Narrador decide o momento exato que o jogador deve rolar um dado e seguir a seguinte tabela: 1 Mau dia: Os Ratkin tornam sua vida difícil. 2-5 Dia triste: Nada de Ratkin. Vá lá fora e deixe um presente para os ratos locais. 6-8 Bom dia: Eles fazem um pequeno favor. 9 Dia muito bom: Os aliados Ratkin salvam sua bunda. 10 Um Ratkin se une a matilha de ratos e outro sai. O novo membro lhe dá um presente como forma de cortesia. Ele acha que é necessário, mesmo que você não. Os resultados afetam a história como descrito no primeiro parágrafo desta Qualidade. A matilha de Ratkin tem um número de membros igual à matilha do personagem menos um. Note que os Ratkin não são inclinados a aparecer para outros Garou se não os Roedores de Ossos; se você faz parte de alguma matilha multitribal, seus companheiros podem nunca entender a natureza de seus ―benfeitores‖ secretos. Como uma regra opcional, se os Ratkin aparecerem como parte da crônica, o jogador que escolheu essa Qualidade joga com o seu personagem enquanto os outros poderiam jogar com os personagens da matilha dos ratos."
+    },
+    {
+        "id": "anosmia",
+        "nome": "Anosmia",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você perdeu toda a noção de gosto e cheiro. Talvez seja porque você tem estado cercado pelo fedor da cidade por muito tempo ou isso pode ter sido simplesmente um defeito genético. Alguns Roedores de Ossos Impuros nascem com este Defeito; ele é sempre escolhido em adição a mais óbvia e debilitante Deformidade de Impuro escolhida na criação do personagem. Independente da causa deste defeito, você automaticamente falha em qualquer teste que envolva esses dois sentidos, incluindo testes de Instinto Primitivo para caçar ou seguir trilhas. Na forma lupina, ele faz ainda mais falta, pois o olfato é o sentido mais apurado do lobo; este defeito cancela o -2 de dificuldade em teste de Percepção nesta forma. Mas há um pequeno benefício, porém: A critério do narrador, você pode ser imune a Dons e habilidades sobrenaturais que envolvam odor ou fedor, como o Dom Odor Repugnante. A comida feita pelos Roedores de Ossos também parece muito boa para você, mesmo se a aparência for repulsiva."
+    },
+    {
+        "id": "hominideo_esquecido",
+        "nome": "Hominídeo Esquecido",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Você não consegue se lembrar de nada desde a sua Primeira Mudança. Às vezes, você não consegue se lembrar de mais do que um ou dois anos atrás. Sua primeira transformação foi tão intensa, tão nítida, que a memória de toda sua vida comum foi completamente arrancada. Você, sem dúvida, vagou pelas ruas por meses antes que os Roedores de Ossos o encontrasse e o ensinasse o que você realmente era — nenhuma outra tribo o acolheria. Mesmo porque, a maioria dos outros Garou não compartilha da tolerância que os Roedores e Filhos de Gaia têm pelos mentalmente doentes. Este Defeito é permitido somente para Garou hominídeos. Viver nas ruas o distanciou e muito do mundo dos homens. Você viveu como um animal, e então, perdeu muito do seu entendimento sobre a vida humana. Como parte disso, você tem as mesmas restrições de Habilidades que os lupinos possuem. Você caiu entre os cacos da sociedade, portanto começa o jogo sem uma identidade, um nome humano ou qualquer laço com a sociedade humana. (Você não pode ter esse defeito se já tiver escolhido a Qualidade: Batalhador)."
+    },
+    {
+        "id": "fobia",
+        "nome": "Fobia",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Muitos Roedores de Ossos acabaram perambulando pelas ruas porque eram quebrados, sem casa ou porque eram mentalmente doentes. A transição do humano para a criatura sobrenatural nem sempre é tão fácil e alguns Garou encaram circunstâncias extremas pelo caminho. O trauma da Primeira Mudança pode deixar uma cicatriz na alma, levando a irracionais e inexplicáveis medos de pessoas, lugares e coisas perfeitamente normais. Um personagem com o Defeito Fobia tem uma forte aversão a um tipo de encontro ou confrontação que facilmente ocorre em uma história. Quando de frente para esse medo (corvos, pássaros, ratos, lugares fechados, altura etc), o personagem deve fazer um teste de Força de Vontade (dificuldade 9); um sucesso ignora a fobia. Se não conseguir nenhum sucesso, ele deverá gastar o resto da cena tentando evitar ou fugir da situação, confrontação ou revelação. Numa falha crítica, o personagem fica paralisado de medo por pelo menos um turno. Gastar um ponto de Força de Vontade ignora este efeito no próximo turno, mas somente por um turno, sem dúvidas tempo suficiente para o resto de matilha chegar a socorro. Como você pode esperar, o Narrador tem o direito de proibir qualquer fobia que seja muito trivial ou exótica de aparecer na história. Na verdade, o Narrador pode se sentir livre para trabalhar nessas fobias de vez em quando para justificar o Defeito. Se o Defeito não for inconveniente ou desafiador para o personagem, o Narrador pode vetá-lo imediatamente e escolher outro Defeito para o personagem."
+    },
+    {
+        "id": "sangue_do_chacal",
+        "nome": "Sangue do Chacal",
+        "tipo": "defeito",
+        "valor": 5,
+        "descricao": "Você é amaldiçoado. Na verdade, você faz os outros Roedores de Ossos parecerem sortudos. Uma vez por sessão, alguma coisa que você tentar vai dar terrivelmente errado. Isso pode ser qualquer coisa, desde cuspir uma bebida até errar um alvo num combate e acertar seu melhor amigo. O Narrador pode colocar um objeto na sua frente para representar essa maldição. No momento que o sangue do chacal se mostrar, ele remove o objeto e altera a história de forma que a ação que você acabou de tentar não apenas falhe, mas falhe drasticamente. Jogadores experientes podem interpretar esta falha como uma falha crítica automática em qualquer teste. Alguns mais dramáticos preferirão complicações inesperadas ou uma revirada dramática de um grande sucesso do herói naquela noite. Senhores das Sombras Mentor / Mentor Temido (Qualidade: 2 ou 3 pontos) Embora os Senhores das Sombras não possam comprar o Antecedente Mentor, muitos, no entanto, recebem algum tipo de instrução antes de aprenderem a serem manipuladores efetivos. Por dois pontos, você terá um mentor como descrito no livro básico de Lobisomem, mas, independente do Posto dele, você jamais receberá mais do que instruções ocasionais. Ele jamais virá ajudá-lo, nem se responsabilizará por suas ações. Você irá servi-lo mais do que o contrário, mas se você for esperto poderá aprender mais do que sonhou ser possível. Por três pontos, seu mentor é particularmente bem conhecido e temido na sua seita (e talvez, na tribo em geral). Sua influência é tal que você ganha um dado adicional em todos os testes Sociais com Senhores das Sombras, mas você também herda pelo menos um inimigo do passado de seu mentor. Nesse caso, como no caso de um mentor normal, seu mentor não virá em sua ajuda e não pode ser chamado de amigo ou aliado. Ele é simplesmente assustador o bastante para que os outros temam você, não importando o que seu mentor acha do assunto."
+    },
+    {
+        "id": "crianca_do_trovao",
+        "nome": "Criança do Trovão",
+        "tipo": "qualidade",
+        "valor": -5,
+        "descricao": "Você é especialmente próximo ao Avô Trovão, a ponto de até os Theurges de sua seita o olham com inveja. Você ganha um ponto temporário de Gnose quando você sai em uma tempestade, que dura até ser usado ou até você deixar a tempestade, e você recebe um dado a menos de dano de qualquer efeito relacionado com a tempestade ou eletricidade (mesmo se esses efeitos não puderem ser normalmente absorvidos). Você também ganha um dado adicional em todas os testes Sociais com espíritos da tempestade ou da corte do Avô Trovão (o que inclui Corvos da Tempestade, espíritos da Gralha e do Corvo, espíritos totens, e avatares do próprio Avô Trovão)."
+    },
+    {
+        "id": "salafrario",
+        "nome": "Salafrário",
+        "tipo": "defeito",
+        "valor": 1,
+        "descricao": "Você é um mentiroso conhecido e ninguém confia em você a uma distância maior do que pode atirá-lo. Seja merecida ou não, você tem uma reputação de traiçoeiro e velhaco, e perde um dado de todos seus testes Sociais sempre que lidar com outros Senhores das Sombras."
+    },
+    {
+        "id": "facilmente_amedrontado",
+        "nome": "Facilmente Amedrontado",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Senhores das Sombras são atraídos por tempestades como peixes por água, mas você não consegue entender por quê, já que tempestades o assustam. Relâmpagos, trovões e totens ameaçadores como o Avô Trovão lhe dão arrepios, e você não consegue se manter calmo ao lado destas coisas. Você perde um dado de todas suas paradas de dados relacionadas com interação entre você e outros Senhores das Sombras, e dois dados de todas as paradas quando lidando com espíritos das tempestades e outros membros da corte do Avô Trovão. Os Senhores das Sombras o consideram fraco e covarde e não estão muito errados. Os jogadores devem pensar bem antes de escolherem este Defeito, pois ela afeta dramaticamente as suas relações com sua tribo."
+    },
+    {
+        "id": "ingenuo",
+        "nome": "Ingênuo",
+        "tipo": "defeito",
+        "valor": 2,
+        "descricao": "Talvez faltem alguns parafusos na sua cabeça, ou talvez você jamais tenha aprendido a separar a realidade da ficção. Não importa por quê, você é extremamente vulnerável a mentiras sutis e meias-verdades. Você perde três dados de todas as paradas relacionadas a trapaças e subterfúgio, estando você dizendo suas próprias frágeis mentiras ou tentando descobrir se alguém lhe diz a verdade. Wendigo"
+    },
+    {
+        "id": "camuflagem",
+        "nome": "Camuflagem",
+        "tipo": "qualidade",
+        "valor": -2,
+        "descricao": "Você é Garou, certo, mas algo em você dificulta para qualquer pessoa dizer a qual tribo você pertence, ou até mesmo em qual augúrio você nasceu. Você ainda está preso às tradições e regras da sua fase da lua e de seu povo, mas você é muito bom em se misturar em qualquer reunião da sociedade Garou. Se você for presenteado com uma situação onde seria de seu interesse, ou interesse de alguém próximo a você, fingir ser de outra tribo ou augúrio, você pode acrescentar um dado no seu Atributo Carisma ou em sua Habilidade Etiqueta."
+    },
+    {
+        "id": "rei_do_drama",
+        "nome": "Rei do Drama",
+        "tipo": "defeito",
+        "valor": 3,
+        "descricao": "Você simplesmente não resiste à tentação de chamar atenção para si. Não importa o quê, mas algo sempre tem que estar dando errado — de preferência algo que é culpa de uma outra pessoa, e especialmente um problema que você não pode enxergar uma resolução. Quanto mais pessoas souberem sobre você e seus problemas, melhor. Você nunca está satisfeito se tudo estiver dando certo e você não está livre de inventar coisas que não são verdades para ter pessoas ao seu lado. Qualquer pessoa que insinua sobre seus hábitos está sendo injusta e cruel, especialmente uma vez que você tem tantas outras coisas para se preocupar. Sempre que o foco do evento não for você, ou surgiu a partir de uma questão em que não está envolvido, você perde um ponto de Força de Vontade. Se a cena envolve um personagem diferente (especialmente um que você não gosta) recebendo Renome ou tendo sucesso em testes de Liderança ou Performance, você deve fazer um teste para evitar o frenesi."
+    }
+]
