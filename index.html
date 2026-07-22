@@ -476,7 +476,18 @@
               </div>
               <div id="donsDiv">
                 <h3 align="center">Qualidades e Defeitos</h3>
-                <textarea name="qualidadesDefeitos" id="qualidadesDefeitosId"></textarea>
+                <div class="qualidades-defeitos-picker">
+                  <label for="buscarQualidadeDefeito">Buscar por nome:</label>
+                  <input type="search" id="buscarQualidadeDefeito" placeholder="Digite para filtrar..." autocomplete="off">
+                  <label for="selecionarQualidadeDefeito">Selecionar item:</label>
+                  <select id="selecionarQualidadeDefeito" disabled>
+                    <option value="">Carregando itens...</option>
+                  </select>
+                  <p id="statusQualidadeDefeito" class="qualidades-defeitos-status" role="status"></p>
+                </div>
+                <div id="qualidadesDefeitosCards" class="qualidades-defeitos-cards" aria-live="polite">
+                  <p class="qualidades-defeitos-vazio">Nenhuma qualidade ou defeito selecionado.</p>
+                </div>
               </div>
             </div>
           </div>
