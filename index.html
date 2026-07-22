@@ -491,13 +491,13 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="gloria-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="gloria-perm" placeholder="Pontos permanentes">
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="gloria-temp" placeholder="Pontos temporários">
+                        <input type="number" id="gloria-temp" placeholder="Pontos temporários">
                       </td>
                     </tr>
                   </table>
@@ -513,13 +513,13 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="sabedoria-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="sabedoria-perm" placeholder="Pontos permanentes">
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="sabedoria-temp" placeholder="Pontos temporários">
+                        <input type="number" id="sabedoria-temp" placeholder="Pontos temporários">
                       </td>
                     </tr>
                   </table>
@@ -534,13 +534,13 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="honra-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="honra-perm" placeholder="Pontos permanentes">
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="honra-temp" placeholder="Pontos temporários">
+                        <input type="number" id="honra-temp" placeholder="Pontos temporários">
                       </td>
                     </tr>
                   </table>
@@ -560,13 +560,21 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="gnose-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="gnose-perm" placeholder="Pontos permanentes">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <div class="ant-actions">
+                          <button type="button" onclick="removerPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">-</button>
+                          <button type="button" onclick="adicionarPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">+</button>
+                        </div>
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="gnose-temp" placeholder="Pontos temporários">
+                        <input type="number" id="gnose-temp" placeholder="Pontos temporários">
                       </td>
                     </tr>
                     <th colspan="2">----------------------------------------------------------</th>
@@ -594,13 +602,21 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="furia-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="furia-perm" placeholder="Pontos permanentes">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <div class="ant-actions">
+                          <button type="button" onclick="removerPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                          <button type="button" onclick="adicionarPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                        </div>
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="furia-temp" placeholder="Pontos temporários">
+                        <input type="number" id="furia-temp" placeholder="Pontos temporários">
                       </td>
                     </tr>
                     <th colspan="2">----------------------------------------------------------</th>
@@ -627,13 +643,21 @@
                     <tr>
                       <td>Permanentes .:</td>
                       <td>
-                        <input type="text" id="fdv-perm" placeholder="Pontos permanentes">
+                        <input type="number" id="fdv-perm" placeholder="Pontos permanentes">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2">
+                        <div class="ant-actions">
+                          <button type="button" onclick="removerPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                          <button type="button" onclick="adicionarPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                        </div>
                       </td>
                     </tr>
                     <tr>
                       <td>Temporários..:</td>
                       <td>
-                        <input type="text" id="fdv-temp" placeholder="Pontos permanentes">
+                        <input type="number" id="fdv-temp" placeholder="Pontos permanentes">
                       </td>
                     </tr>
                     <th colspan="2">----------------------------------------------------------</th>

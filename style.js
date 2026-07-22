@@ -721,6 +721,28 @@ function desmarcarCheckboxes(checkboxTable) {
 	});
 }
 
+function desmarcarCheckboxesAntecedente() {
+	const container = document.getElementById('antecedenteTable');
+	if (!container) return;
+
+	const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+	checkboxes.forEach(checkbox => {
+		if (checkbox.dataset.antecedenteListener === 'true') return;
+
+		checkbox.addEventListener('change', function() {
+			if (this.checked) {
+				checkboxes.forEach(cb => {
+					if (cb !== this) {
+						cb.checked = false;
+					}
+				});
+			}
+		});
+
+		checkbox.dataset.antecedenteListener = 'true';
+	});
+}
+
 function atrMais(){
   	var atual = document.getElementById(atrId).value;
   	var totalXP = parseInt(document.getElementById('XP-pool').value);
@@ -905,15 +927,118 @@ function habMenos(){
   	
 }
 
-function antecedenteMais(){
-  	var atual = parseInt(document.getElementById(antDice).value);
-  	var totalXP = parseInt(document.getElementById('XP-pool').value);
-	var totalPB = parseInt(document.getElementById('PB-pool').value);
-	var consumo = 0;
-	var novo = atual - (-1); //Evitando Concatenacoes
+function ajustarPontoVirtude(campoId, custoPB, custoXP, operacao) {
+	const input = document.getElementById(campoId);
+	if (!input) return;
 
-	
+	const atual = parseInt(input.value) || 0;
+	const totalXP = parseInt(document.getElementById('XP-pool').value) || 0;
+	const totalPB = parseInt(document.getElementById('PB-pool').value) || 0;
+
+	if (operacao === 'mais') {
+		const custoXPAtual = custoXP(atual);
+		if (tipoPonto.checked) {
+			if (totalPB < custoPB) {
+				alert('Pontos bonus insuficiente! Você tem ' + totalPB + ' PB disponíveis.');
+				return;
+			}
+			document.getElementById('PB-pool').value = totalPB - custoPB;
+			input.value = atual + 1;
+		} else {
+			if (totalXP < custoXPAtual) {
+				alert('XP insuficiente! Você tem ' + totalXP + ' XP disponíveis.');
+				return;
+			}
+			document.getElementById('XP-pool').value = totalXP - custoXPAtual;
+			input.value = atual + 1;
+		}
+	} else if (operacao === 'menos') {
+		if (atual <= 0) return;
+
+		const novo = atual - 1;
+		const custoXPReembolso = custoXP(novo);
+		if (tipoPonto.checked) {
+			document.getElementById('PB-pool').value = totalPB + custoPB;
+			input.value = novo;
+		} else {
+			document.getElementById('XP-pool').value = totalXP + custoXPReembolso;
+			input.value = novo;
+		}
+	}
 }
+
+function adicionarPontoVirtude(campoId, custoPB, custoXP) {
+	ajustarPontoVirtude(campoId, custoPB, custoXP, 'mais');
+}
+
+function removerPontoVirtude(campoId, custoPB, custoXP) {
+	ajustarPontoVirtude(campoId, custoPB, custoXP, 'menos');
+}
+
+function antMais(){
+	const container = document.getElementById('antecedenteTable');
+	if (!container) return;
+
+	const checkboxSelecionado = container.querySelector('input[type="checkbox"]:checked');
+	if (!checkboxSelecionado) {
+		alert('Selecione um antecedente para alterar.');
+		return;
+	}
+
+	const inputAntecedente = checkboxSelecionado.closest('.ant-row').querySelector('input[type="number"]');
+	if (!inputAntecedente) return;
+
+	const atual = parseInt(inputAntecedente.value) || 0;
+	const totalXP = parseInt(document.getElementById('XP-pool').value);
+	const totalPB = parseInt(document.getElementById('PB-pool').value);
+	const novo = atual + 1;
+
+	if (tipoPonto.checked) {
+		if (totalPB < 1) {
+			alert('Pontos bonus insuficiente! Você tem ' + totalPB + ' PB disponíveis.');
+			return;
+		}
+		document.getElementById('PB-pool').value = totalPB - 1;
+		inputAntecedente.value = novo;
+	} else {
+		if (totalXP < 5) {
+			alert('XP insuficiente! Você tem ' + totalXP + ' XP disponíveis.');
+			return;
+		}
+		document.getElementById('XP-pool').value = totalXP - 5;
+		inputAntecedente.value = novo;
+	}
+}
+
+function antMenos(){
+	const container = document.getElementById('antecedenteTable');
+	if (!container) return;
+
+	const checkboxSelecionado = container.querySelector('input[type="checkbox"]:checked');
+	if (!checkboxSelecionado) {
+		alert('Selecione um antecedente para alterar.');
+		return;
+	}
+
+	const inputAntecedente = checkboxSelecionado.closest('.ant-row').querySelector('input[type="number"]');
+	if (!inputAntecedente) return;
+
+	const atual = parseInt(inputAntecedente.value) || 0;
+	if (atual <= 0) return;
+
+	const totalXP = parseInt(document.getElementById('XP-pool').value);
+	const totalPB = parseInt(document.getElementById('PB-pool').value);
+	const novo = atual - 1;
+
+	if (tipoPonto.checked) {
+		document.getElementById('PB-pool').value = totalPB + 1;
+		inputAntecedente.value = novo;
+	} else {
+		document.getElementById('XP-pool').value = totalXP + 5;
+		inputAntecedente.value = novo;
+	}
+}
+
 
 document.querySelector('input[type="number"]').addEventListener('wheel', function(e) {
   e.preventDefault();
@@ -995,6 +1120,7 @@ function iniciarAtributos() {
 window.onload = () => {
 		carregarCampos();
 		iniciarAtributos();
+		desmarcarCheckboxesAntecedente();
         const fundoSalvo = localStorage.getItem('backgroundUser');
         if (fundoSalvo) {
         document.body.style.backgroundImage = `url(${fundoSalvo})`;
