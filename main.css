@@ -180,9 +180,124 @@ h1,h2,h3 {
 	width: 100%;
 }
 
-#donsDiv textarea {
+.qualidades-defeitos-picker {
+	display: grid;
+	grid-template-columns: max-content minmax(180px, 1fr);
+	align-items: center;
+	gap: 8px 12px;
+	margin-bottom: 12px;
+}
+
+.qualidades-defeitos-picker input[type="search"],
+.qualidades-defeitos-picker select {
+	box-sizing: border-box;
+	min-width: 0;
 	width: 100%;
-	height: 90%;
+	padding: 7px 9px;
+	border: 1px solid var(--input-border);
+	border-radius: 8px;
+	background-color: var(--input-background);
+	color: var(--input-text);
+	font: inherit;
+}
+
+.qualidades-defeitos-picker input[type="search"]:focus,
+.qualidades-defeitos-picker select:focus {
+	outline: 2px solid var(--secondary-color);
+	outline-offset: 1px;
+}
+
+.qualidades-defeitos-status {
+	grid-column: 2;
+	margin: 0;
+	font-size: 0.85em;
+	opacity: 0.8;
+}
+
+.qualidades-defeitos-cards {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 12px;
+	min-height: 110px;
+	padding: 12px;
+	border: 1px dashed var(--border-color);
+	border-radius: 8px;
+	background-color: rgba(0, 0, 0, 0.15);
+}
+
+.qualidades-defeitos-vazio {
+	grid-column: 1 / -1;
+	align-self: center;
+	margin: auto;
+	text-align: center;
+	opacity: 0.7;
+}
+
+.qualidade-defeito-card {
+	position: relative;
+	padding: 14px 42px 14px 14px;
+	border-left: 4px solid var(--secondary-color);
+	border-radius: 6px;
+	background-color: var(--background-section);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.qualidade-defeito-card.defeito {
+	border-left-color: #e0a12b;
+}
+
+.qualidade-defeito-card h4 {
+	margin: 0 0 6px;
+	color: var(--text-color);
+}
+
+.qualidade-defeito-alternar {
+	margin-bottom: 8px;
+	padding: 3px 8px;
+	border: 1px solid var(--border-color);
+	border-radius: 4px;
+	background: transparent;
+	color: var(--text-color);
+	font: inherit;
+	font-size: 0.8em;
+	cursor: pointer;
+}
+
+.qualidade-defeito-alternar:hover,
+.qualidade-defeito-alternar:focus {
+	border-color: var(--secondary-color);
+	color: var(--secondary-color);
+}
+
+.qualidade-defeito-card p {
+	margin: 0;
+	line-height: 1.35;
+}
+
+.qualidade-defeito-tipo {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	opacity: 0.75;
+}
+
+.qualidade-defeito-remover {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 28px;
+	height: 28px;
+	border: 1px solid var(--border-color);
+	border-radius: 50%;
+	background: transparent;
+	color: var(--text-color);
+	cursor: pointer;
+}
+
+.qualidade-defeito-remover:hover,
+.qualidade-defeito-remover:focus {
+	background-color: var(--secondary-color);
 }
 
 .round-button{
