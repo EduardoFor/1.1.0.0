@@ -452,6 +452,40 @@ function limparCampos() {
 		document.getElementById('formaImg').src = carregaImgHumano;	
   	}
 }
+function aplicarSaldoDano(saldo) {
+	const camposOrdem = ['dmgContusivo', 'dmgLetal', 'dmgAgravado'];
+	const valorSaldo = Math.max(0, Math.min(parseInt(saldo, 10) || 0, 18));
+	saldoDanoTotal = valorSaldo;
+
+	let campoDestinoId = 'dmgContusivo';
+	let valorParaProcessar = valorSaldo;
+
+	if (valorSaldo >= 7 && valorSaldo <= 12) {
+		campoDestinoId = 'dmgLetal';
+		valorParaProcessar = valorSaldo - 6;
+	} else if (valorSaldo >= 13) {
+		campoDestinoId = 'dmgAgravado';
+		valorParaProcessar = valorSaldo - 12;
+	}
+
+	camposOrdem.forEach(campoId => {
+		const campo = document.getElementById(campoId);
+		if (!campo) return;
+
+		if (campoId === 'dmgContusivo') {
+			campo.value = valorSaldo >= 7 ? 0 : valorSaldo;
+		} else if (campoId === 'dmgLetal') {
+			campo.value = valorSaldo >= 7 && valorSaldo <= 12 ? valorParaProcessar : 0;
+		} else if (campoId === 'dmgAgravado') {
+			campo.value = valorSaldo >= 13 ? valorParaProcessar : 0;
+		}
+	});
+
+	dmg = campoDestinoId;
+	gravidadeFerimentos(valorParaProcessar, campoDestinoId);
+	alterarParagrafo();
+}
+
 // Exporta os dados dos inputs type="number" para um arquivo JSON
 function exportarParaArquivo() {
 	const inputsNumber = document.querySelectorAll('input[type="number"]');
@@ -459,17 +493,25 @@ function exportarParaArquivo() {
 	const textareas = document.querySelectorAll('textarea');
 	const ranges = document.querySelectorAll('input[type="range"]');
 	const inputsUrl = document.querySelectorAll('input[type="url"]');
+	const checkboxes = document.querySelectorAll('input[type="checkbox"]');
   
 	const data = {};
 
-	[...inputsNumber, ...inputsText, ...textareas, ...ranges, ...inputsUrl].forEach(input => {
+	[...inputsNumber, ...inputsText, ...textareas, ...ranges, ...inputsUrl, ...checkboxes].forEach(input => {
 		if (input.id) {
-		data[input.id] = input.value;
+			data[input.id] = input.type === 'checkbox' ? input.checked : input.value;
 		}
 	});
-	data.qualidadesDefeitosSelecionados = JSON.parse(
+
+	const selecaoQualidadesDefeitos = JSON.parse(
 		localStorage.getItem('qualidadesDefeitosSelecionados') || '[]'
 	);
+	data.qualidadesDefeitos = selecaoQualidadesDefeitos;
+	data.qualidadesDefeitosSelecionados = selecaoQualidadesDefeitos;
+	data.saldoVida = saldoDanoTotal;
+	data.saldoDanoTotal = saldoDanoTotal;
+	data.totalXP = document.getElementById('XP-pool')?.value || '0';
+	data.totalPontosBonus = document.getElementById('PB-pool')?.value || '0';
 
 	const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
 	const url = URL.createObjectURL(blob);
@@ -491,25 +533,49 @@ function importarDeArquivo(input) {
 	reader.onload = function (e) {
 		try {
 			const data = JSON.parse(e.target.result);
+			const selecaoQualidades = Array.isArray(data.qualidadesDefeitos)
+				? data.qualidadesDefeitos.map(item => typeof item === 'string' ? item : item.id).filter(Boolean)
+				: Array.isArray(data.qualidadesDefeitosSelecionados)
+					? data.qualidadesDefeitosSelecionados.map(item => typeof item === 'string' ? item : item.id).filter(Boolean)
+					: [];
+
+			if (selecaoQualidades.length > 0 || data.qualidadesDefeitos || data.qualidadesDefeitosSelecionados) {
+				localStorage.setItem('qualidadesDefeitosSelecionados', JSON.stringify(selecaoQualidades));
+				if (typeof window.carregarQualidadesDefeitos === 'function') {
+					window.carregarQualidadesDefeitos(selecaoQualidades);
+				}
+			}
+
 			Object.keys(data).forEach(id => {
-				if (id === 'qualidadesDefeitosSelecionados') {
-					const selecao = Array.isArray(data[id])
-						? data[id].map(item => typeof item === 'string' ? item : item.id).filter(Boolean)
-						: [];
-					localStorage.setItem(id, JSON.stringify(selecao));
-					if (typeof window.carregarQualidadesDefeitos === 'function') {
-						window.carregarQualidadesDefeitos(selecao);
-					}
+				if (id === 'qualidadesDefeitos' || id === 'qualidadesDefeitosSelecionados') {
 					return;
 				}
+
 				const input = document.getElementById(id);
 				if (input) {
-				input.value = data[id];
-				}		
+					if (input.type === 'checkbox') {
+						input.checked = Boolean(data[id]);
+					} else {
+						input.value = data[id];
+					}
+				}
 			});
+
+			if (data.totalXP !== undefined) {
+				document.getElementById('XP-pool').value = data.totalXP;
+			}
+			if (data.totalPontosBonus !== undefined) {
+				document.getElementById('PB-pool').value = data.totalPontosBonus;
+			}
+
+			const saldoImportado = data.saldoVida ?? data.saldoDanoTotal ?? null;
+			if (saldoImportado !== null && saldoImportado !== '') {
+				aplicarSaldoDano(saldoImportado);
+			}
+
 			alert('Dados importados com sucesso!');
 		} catch (error) {
-		alert('Erro ao importar arquivo.');
+			alert('Erro ao importar arquivo.');
 		}
 	};
 	reader.readAsText(file);
