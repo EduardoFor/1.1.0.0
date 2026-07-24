@@ -498,20 +498,16 @@
 
                 <div>
                   <h3 align="center">Glória</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="gloria-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="gloria-temp" placeholder="Pontos temporários">
-                      </td>
-                    </tr>
-                  </table>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="gloria-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="gloria-temp" placeholder="Pontos temporários">
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -520,20 +516,16 @@
 
                 <div>
                   <h3 align="center">Sabedoria</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="sabedoria-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="sabedoria-temp" placeholder="Pontos temporários">
-                      </td>
-                    </tr>
-                  </table>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="sabedoria-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="sabedoria-temp" placeholder="Pontos temporários">
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -541,20 +533,16 @@
 
                 <div>
                   <h3 align="center">Honra</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="honra-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="honra-temp" placeholder="Pontos temporários">
-                      </td>
-                    </tr>
-                  </table>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="honra-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="honra-temp" placeholder="Pontos temporários">
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -566,41 +554,29 @@
               <div class="centerDiv">
 
                 <div>
-                  <h3 align="center">Gnose</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="gnose-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <div class="ant-actions">
-                          <button type="button" onclick="removerPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">-</button>
-                          <button type="button" onclick="adicionarPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">+</button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="gnose-temp" placeholder="Pontos temporários">
-                      </td>
-                    </tr>
-                    <th colspan="2">----------------------------------------------------------</th>
-                    <tr>
-                      <th colspan="2">Barra de consumo</th>
-                    </tr>
-                    <tr>
-                      <th colspan="2">
-                        <div class="range">
-                          <input type="range" min="0" max="10" value="0" id="gnose-range" class="range-input" />
-                          <div class="gnose-value" id="gnose-value">0</div>
-                        </div>
-                      </th>
-                    </tr>
-                  </table>
+                  <h3 align="center">
+                    Gnose
+                    <input type="number" id="gnose-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                  </h3>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="gnose-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="gnose-temp" placeholder="Pontos temporários">
+                    </div>
+                    <div class="virtude-actions">
+                      <button type="button" onclick="removerPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">-</button>
+                      <button type="button" onclick="adicionarPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">+</button>
+                    </div>
+                    <div class="virtude-subtitle">Barra de consumo</div>
+                    <div class="virtude-range">
+                      <input type="range" min="0" max="10" value="0" id="gnose-range" class="range-input" />
+                      <div class="gnose-value" id="gnose-value">0</div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -608,82 +584,58 @@
               <div class="centerDiv">
 
                 <div>
-                  <h3 align="center">Fúria</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="furia-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <div class="ant-actions">
-                          <button type="button" onclick="removerPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
-                          <button type="button" onclick="adicionarPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="furia-temp" placeholder="Pontos temporários">
-                      </td>
-                    </tr>
-                    <th colspan="2">----------------------------------------------------------</th>
-                    <tr>
-                      <th colspan="2">Barra de consumo</th>
-                    </tr>
-                    <tr>
-                      <th colspan="2">
-                        <div class="range">
-                          <input type="range" min="0" max="10" value="0" id="furia-range" class="range-input" />
-                          <div class="furia-value" id="furia-value">0</div>
-                        </div>
-                      </th>
-                    </tr>
-                  </table>
+                  <h3 align="center">
+                    Fúria
+                    <input type="number" id="furia-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                  </h3>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="furia-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="furia-temp" placeholder="Pontos temporários">
+                    </div>
+                    <div class="virtude-actions">
+                      <button type="button" onclick="removerPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                      <button type="button" onclick="adicionarPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                    </div>
+                    <div class="virtude-subtitle">Barra de consumo</div>
+                    <div class="virtude-range">
+                      <input type="range" min="0" max="10" value="0" id="furia-range" class="range-input" />
+                      <div class="furia-value" id="furia-value">0</div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
               <div class="centerDiv">
 
                 <div>
-                  <h3 align="center">Força de Vontade</h3>
-                  <table id="virtudesTable" class="centerDiv">
-                    <tr>
-                      <td>Permanentes .:</td>
-                      <td>
-                        <input type="number" id="fdv-perm" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <tr>
-                      <td colspan="2">
-                        <div class="ant-actions">
-                          <button type="button" onclick="removerPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
-                          <button type="button" onclick="adicionarPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Temporários..:</td>
-                      <td>
-                        <input type="number" id="fdv-temp" placeholder="Pontos permanentes">
-                      </td>
-                    </tr>
-                    <th colspan="2">----------------------------------------------------------</th>
-                    <tr>
-                      <th colspan="2">Barra de consumo</th>
-                    </tr>
-                    <tr>
-                      <th colspan="2">
-                        <div class="range">
-                          <input type="range" min="0" max="10" value="0" id="fdv-range2" class="range-input" />
-                          <div class="fdv-value3" id="fdv-value3">0</div> 
-                        </div>
-                      </th>
-                    </tr>
-                  </table>
+                  <h3 align="center">
+                    Força de Vontade
+                    <input type="number" id="fdv-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                  </h3>
+                  <div class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Permanentes .:</label>
+                      <input type="number" id="fdv-perm" placeholder="Pontos permanentes">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Temporários..:</label>
+                      <input type="number" id="fdv-temp" placeholder="Pontos temporários">
+                    </div>
+                    <div class="virtude-actions">
+                      <button type="button" onclick="removerPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                      <button type="button" onclick="adicionarPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                    </div>
+                    <div class="virtude-subtitle">Barra de consumo</div>
+                    <div class="virtude-range">
+                      <input type="range" min="0" max="10" value="0" id="fdv-range2" class="range-input" />
+                      <div class="fdv-value3" id="fdv-value3">0</div>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -697,53 +649,28 @@
                 <textarea name="qualidadesDefeitos" id="qualidadesDefeitosId" width="100%" height="100px"></textarea>
               </div>
               <div class="centerDiv">
-                <div id="">
+                <div>
                   <h3 align="center">Vitalidade</h3>
-                  <table id="vitalidadeTable" align="center">
-                    <tr>
-                      <td>Contusivo .: </td>
-                      <td>
-                        <input id="dmgContusivo" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()"></input><br>
-                      </td>
-                      <td>
-                        <button class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td>
-                        <p id="pConstusivo"></p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Letal . . . . .: </td>
-                      <td>
-                        <input id="dmgLetal" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()"></input><br>
-                      </td>
-                      <td>
-                        <button class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>
-                      </td>
-                    </tr>
-                      <td></td>
-                      <td>
-                        <p id="pLetal"></p>
-                      </td>
-                    <tr>
-                      <td>Agravado. .: </td>
-                      <td>
-                        <input id="dmgAgravado" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()"></input><br>
-                      </td>
-                      <td>
-                        <button class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>
-                      </td>
-                    </tr>
-                    </tr>
-                      <td></td>
-                      <td>
-                        <p id="pAgravado"></p>
-                      </td>
-                    <tr>
-                  </table>
+                  <div id="vitalidadeTable" class="virtude-card centerDiv">
+                    <div class="virtude-row">
+                      <label>Contusivo .:</label>
+                      <input id="dmgContusivo" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Letal . . . . .:</label>
+                      <input id="dmgLetal" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Agravado. .:</label>
+                      <input id="dmgAgravado" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                    </div>
+                    <div class="virtude-actions">
+                      <button type="button" class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>
+                    </div>
+                    <p id="pConstusivo"></p>
+                    <p id="pLetal"></p>
+                    <p id="pAgravado"></p>
+                  </div>
                   <br>
                 </div>
               </div>

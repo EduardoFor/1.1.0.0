@@ -175,6 +175,61 @@ h1,h2,h3 {
 	margin-right: 10%;
 }
 
+.virtude-card {
+	display: grid;
+	gap: 8px;
+	padding: 12px;
+	border: 1px solid var(--border-color);
+	border-radius: 8px;
+	background-color: var(--background-section);
+	min-width: 240px;
+}
+
+.virtude-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+}
+
+.virtude-row label {
+	flex: 1;
+	font-size: 0.95em;
+}
+
+.virtude-row input {
+	flex: 1;
+	min-width: 0;
+}
+
+.virtude-actions {
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+}
+
+.virtude-separador {
+	text-align: center;
+	opacity: 0.6;
+	margin: 4px 0;
+}
+
+.virtude-subtitle {
+	text-align: center;
+	font-weight: 600;
+	margin-top: 4px;
+}
+
+.virtude-range {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.virtude-range input[type="range"] {
+	flex: 1;
+}
+
 #donsDiv {
 	margin-left: 5%;
 	width: 100%;

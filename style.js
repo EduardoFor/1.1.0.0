@@ -543,6 +543,11 @@ function inicializarQualidadesDefeitos() {
 		return true;
 	}
 
+	function formatarNomeItem(item) {
+		const valor = Number(item.valor) || 0;
+		return `${item.nome} (${valor})`;
+	}
+
 	function renderizarCards() {
 		cards.replaceChildren();
 
@@ -567,7 +572,7 @@ function inicializarQualidadesDefeitos() {
 			tipo.textContent = item.tipo;
 
 			const titulo = document.createElement('h4');
-			titulo.textContent = item.nome;
+			titulo.textContent = formatarNomeItem(item);
 
 			const alternarDescricao = document.createElement('button');
 			alternarDescricao.className = 'qualidade-defeito-alternar';
@@ -639,7 +644,7 @@ function inicializarQualidadesDefeitos() {
 		itensFiltrados.forEach((item, indice) => {
 			const opcao = document.createElement('option');
 			opcao.value = item.id || String(indice);
-			opcao.textContent = `${item.nome} (${item.tipo})`;
+			opcao.textContent = `${formatarNomeItem(item)} · ${item.tipo}`;
 			seletor.appendChild(opcao);
 		});
 
@@ -709,21 +714,42 @@ function inicializarQualidadesDefeitos() {
 inicializarQualidadesDefeitos();
 
 function retirarDados() {
+	const campoAtualId = dmg || 'dmgContusivo';
+	const campoAtual = document.getElementById(campoAtualId);
+	if (!campoAtual) return;
 
-	let dmgCont = parseInt(document.getElementById(dmg).value) || 0;
-	gravidadeFerimentos(dmgCont);
+	const valorAtual = parseInt(campoAtual.value, 10) || 0;
+	const camposOrdem = ['dmgContusivo', 'dmgLetal', 'dmgAgravado'];
+	const indiceAtual = camposOrdem.indexOf(campoAtualId);
 
+	let valorParaProcessar = valorAtual;
+
+	if (valorAtual > 6 && indiceAtual >= 0 && indiceAtual < camposOrdem.length - 1) {
+		const excesso = valorAtual - 6;
+		const proximoCampoId = camposOrdem[indiceAtual + 1];
+		const proximoCampo = document.getElementById(proximoCampoId);
+
+		if (proximoCampo) {
+			const valorProximo = parseInt(proximoCampo.value, 10) || 0;
+			proximoCampo.value = valorProximo + excesso;
+		}
+
+		campoAtual.value = 0;
+		valorParaProcessar = 6;
+	} else if (valorAtual > 6) {
+		valorParaProcessar = 6;
+	}
+
+	gravidadeFerimentos(valorParaProcessar);
 }
 
 function alterarParagrafo() {
+	const mensagem = 'Aperte o botão para aplicar o dano.';
+	const paragrafoDestino = document.getElementById('pConstusivo');
 
-	var paragrafo = document.getElementById('pConstusivo');
-	paragrafo.textContent = "Aperte o botão";
-	paragrafo = document.getElementById('pLetal');
-	paragrafo.textContent = "Aperte o botão";
-	paragrafo = document.getElementById('pAgravado');
-	paragrafo.textContent = "Aperte o botão";
-
+	if (paragrafoDestino) {
+		paragrafoDestino.textContent = mensagem;
+	}
 }
 
 function gravidadeFerimentos(dmgCont) {
@@ -1144,8 +1170,15 @@ function ajustarPontoVirtude(campoId, custoPB, custoXP, operacao) {
 	const atual = parseInt(input.value) || 0;
 	const totalXP = parseInt(document.getElementById('XP-pool').value) || 0;
 	const totalPB = parseInt(document.getElementById('PB-pool').value) || 0;
+	const inputInicial = document.getElementById(campoId.replace(/-perm$/, '-inicial'));
+	const pontosIniciais = parseInt(inputInicial?.value, 10) || 0;
 
 	if (operacao === 'mais') {
+		if (atual < pontosIniciais) {
+			input.value = atual + 1;
+			return;
+		}
+
 		const custoXPAtual = custoXP(atual);
 		if (tipoPonto.checked) {
 			if (totalPB < custoPB) {
