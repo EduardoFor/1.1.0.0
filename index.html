@@ -654,15 +654,23 @@
                   <div id="vitalidadeTable" class="virtude-card centerDiv">
                     <div class="virtude-row">
                       <label>Contusivo .:</label>
-                      <input id="dmgContusivo" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                      <input id="dmgContusivo" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgContusivo')" onfocus="selecionarCampoDano('dmgContusivo')">
                     </div>
                     <div class="virtude-row">
                       <label>Letal . . . . .:</label>
-                      <input id="dmgLetal" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                      <input id="dmgLetal" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgLetal')" onfocus="selecionarCampoDano('dmgLetal')">
                     </div>
                     <div class="virtude-row">
                       <label>Agravado. .:</label>
-                      <input id="dmgAgravado" type="number" placeholder="coloque aqui" value="0" onchange="alterarParagrafo()">
+                      <input id="dmgAgravado" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgAgravado')" onfocus="selecionarCampoDano('dmgAgravado')">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Dano Recebido:</label>
+                      <input id="danoRecebido" type="number" placeholder="valor" value="0" min="0">
+                    </div>
+                    <div class="virtude-row">
+                      <label>Dano Curado:</label>
+                      <input id="danoCurado" type="number" placeholder="valor" value="0" min="0">
                     </div>
                     <div class="virtude-actions">
                       <button type="button" class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>

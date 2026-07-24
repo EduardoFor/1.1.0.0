@@ -6,6 +6,7 @@ var numDice
 var antDice
 var numinaDice
 var dmg
+var saldoDanoTotal = 0;
 var forma = 'homnideoCheck';
 var ImgFormaHumana
 var ImgFormaGlabro
@@ -34,7 +35,10 @@ const containerPericias = document.getElementById('periciasCol');
 const containerConhecimentos = document.getElementById('conhecimentosCol');
 
 damageDebuff.addEventListener('change', function(event) {
-dmg = event.target.id;
+const idAlvo = event.target.id;
+if (['dmgContusivo', 'dmgLetal', 'dmgAgravado'].includes(idAlvo)) {
+	dmg = idAlvo;
+}
 });
 
 const imgHomnideo = document.getElementById('img-homnideo');
@@ -713,162 +717,195 @@ function inicializarQualidadesDefeitos() {
 
 inicializarQualidadesDefeitos();
 
+function selecionarCampoDano(campoId) {
+	if (['dmgContusivo', 'dmgLetal', 'dmgAgravado'].includes(campoId)) {
+		dmg = campoId;
+		alterarParagrafo();
+	}
+}
+
 function retirarDados() {
-	const campoAtualId = dmg || 'dmgContusivo';
-	const campoAtual = document.getElementById(campoAtualId);
-	if (!campoAtual) return;
-
-	const valorAtual = parseInt(campoAtual.value, 10) || 0;
+	const valorRecebido = parseInt(document.getElementById('danoRecebido').value, 10) || 0;
+	const valorCurado = parseInt(document.getElementById('danoCurado').value, 10) || 0;
 	const camposOrdem = ['dmgContusivo', 'dmgLetal', 'dmgAgravado'];
-	const indiceAtual = camposOrdem.indexOf(campoAtualId);
 
-	let valorParaProcessar = valorAtual;
+	saldoDanoTotal = Math.max(0, saldoDanoTotal + valorRecebido - valorCurado);
+	saldoDanoTotal = Math.min(saldoDanoTotal, 18);
 
-	if (valorAtual > 6 && indiceAtual >= 0 && indiceAtual < camposOrdem.length - 1) {
-		const excesso = valorAtual - 6;
-		const proximoCampoId = camposOrdem[indiceAtual + 1];
-		const proximoCampo = document.getElementById(proximoCampoId);
+	let campoDestinoId = 'dmgContusivo';
+	let valorParaProcessar = saldoDanoTotal;
 
-		if (proximoCampo) {
-			const valorProximo = parseInt(proximoCampo.value, 10) || 0;
-			proximoCampo.value = valorProximo + excesso;
-		}
-
-		campoAtual.value = 0;
-		valorParaProcessar = 6;
-	} else if (valorAtual > 6) {
-		valorParaProcessar = 6;
+	if (saldoDanoTotal >= 7 && saldoDanoTotal <= 12) {
+		campoDestinoId = 'dmgLetal';
+		valorParaProcessar = saldoDanoTotal - 6;
+	} else if (saldoDanoTotal >= 13) {
+		campoDestinoId = 'dmgAgravado';
+		valorParaProcessar = saldoDanoTotal - 12;
 	}
 
-	gravidadeFerimentos(valorParaProcessar);
+	camposOrdem.forEach((campoId) => {
+		const campo = document.getElementById(campoId);
+		if (!campo) return;
+
+		if (campoId === 'dmgContusivo') {
+			campo.value = saldoDanoTotal >= 7 ? 0 : saldoDanoTotal;
+		} else if (campoId === 'dmgLetal') {
+			campo.value = saldoDanoTotal >= 7 && saldoDanoTotal <= 12 ? valorParaProcessar : 0;
+		} else if (campoId === 'dmgAgravado') {
+			campo.value = saldoDanoTotal >= 13 ? valorParaProcessar : 0;
+		}
+	});
+
+	dmg = campoDestinoId;
+	document.getElementById('danoRecebido').value = 0;
+	document.getElementById('danoCurado').value = 0;
+	gravidadeFerimentos(valorParaProcessar, campoDestinoId);
 }
 
 function alterarParagrafo() {
-	const mensagem = 'Aperte o botão para aplicar o dano.';
-	const paragrafoDestino = document.getElementById('pConstusivo');
+	const paragrafoConstusivo = document.getElementById('pConstusivo');
+	const paragrafoLetal = document.getElementById('pLetal');
+	const paragrafoAgravado = document.getElementById('pAgravado');
+
+	const paragrafoDestino = {
+		'dmgContusivo': paragrafoConstusivo,
+		'dmgLetal': paragrafoLetal,
+		'dmgAgravado': paragrafoAgravado
+	}[dmg || 'dmgContusivo'];
 
 	if (paragrafoDestino) {
-		paragrafoDestino.textContent = mensagem;
+		const texto = paragrafoDestino.dataset.mensagem || 'Aperte o botão para aplicar o dano.';
+		paragrafoDestino.textContent = texto;
 	}
 }
 
-function gravidadeFerimentos(dmgCont) {
+function gravidadeFerimentos(dmgCont, campoId = dmg || 'dmgContusivo') {
+	const paragrafoConstusivo = document.getElementById('pConstusivo');
+	const paragrafoLetal = document.getElementById('pLetal');
+	const paragrafoAgravado = document.getElementById('pAgravado');
 
-	var paragrafo = document.getElementById('pConstusivo');
-	paragrafo.textContent = " ";
-	paragrafo = document.getElementById('pLetal');
-	paragrafo.textContent = " ";
-	paragrafo = document.getElementById('pAgravado');
-	paragrafo.textContent = " ";
+	[paragrafoConstusivo, paragrafoLetal, paragrafoAgravado].forEach(paragrafo => {
+		if (paragrafo) {
+			paragrafo.dataset.mensagem = '';
+			paragrafo.textContent = '';
+		}
+	});
 
-	const tipoDano = document.getElementById(dmg).id;
+	const tipoDano = document.getElementById(campoId)?.id;
 	if (tipoDano == 'dmgContusivo') {
 		const paragrafo = document.getElementById('pConstusivo');
+		let mensagem = '';
 		switch (dmgCont) {
 			case 0:
-				paragrafo.textContent = "Sem ferimentos";
+				mensagem = 'Sem ferimentos';
 				reduceDice = 0;
 				break;
 			case 1:
-				paragrafo.textContent = "Escoriado";
+				mensagem = 'Escoriado';
 				reduceDice = 0;
 				break;
 			case 2:
-				paragrafo.textContent = "Machucado";
+				mensagem = 'Machucado';
 				reduceDice = 0;
 				break;
 			case 3:
-				paragrafo.textContent = "Ferido";
+				mensagem = 'Ferido';
 				reduceDice = 0;
 				break;
 			case 4:
-				paragrafo.textContent = "Ferido Gravemente(-1)";
+				mensagem = 'Ferido Gravemente(-1)';
 				reduceDice = 1;
 				break;
 			case 5:
-				paragrafo.textContent = "Espancado(-1)";
+				mensagem = 'Espancado(-1)';
 				reduceDice = 1;
 				break;
 			case 6:
-				paragrafo.textContent = "Aleijado(-2)";
+				mensagem = 'Aleijado(-2)';
 				reduceDice = 2;
 				break;
 			default:
 				if (dmgCont >= 7) {
-					paragrafo.textContent = "Máximo excedido";
+					mensagem = 'Máximo excedido';
 				}
+		}
+		if (paragrafo && mensagem) {
+			paragrafo.dataset.mensagem = mensagem;
+			paragrafo.textContent = mensagem;
 		}
 	} else if (tipoDano == 'dmgLetal') {
 		const paragrafo = document.getElementById('pLetal');
+		let mensagem = '';
 		switch (dmgCont) {
-			case 0:
-				paragrafo.textContent = "Sem ferimentos";
-				reduceDice = 0;
-				break;
 			case 1:
-				paragrafo.textContent = "Escoriado";
+				mensagem = 'Escoriado';
 				reduceDice = 0;
 				break;
 			case 2:
-				paragrafo.textContent = "Machucado(-1)";
+				mensagem = 'Machucado(-1)';
 				reduceDice = 1;
 				break;
 			case 3:
-				paragrafo.textContent = "Ferido(-1)";
+				mensagem = 'Ferido(-1)';
 				reduceDice = 1;
 				break;
 			case 4:
-				paragrafo.textContent = "Ferido Gravemente(-2)";
+				mensagem = 'Ferido Gravemente(-2)';
 				reduceDice = 2;
 				break;
 			case 5:
-				paragrafo.textContent = "Espancado(-2)";
+				mensagem = 'Espancado(-2)';
 				reduceDice = 2;
 				break;
 			case 6:
-				paragrafo.textContent = "Aleijado(-5)";
+				mensagem = 'Aleijado(-5)';
 				reduceDice = 5;
 				break;
 			default:
 				if (dmgCont >= 7) {
-					paragrafo.textContent = "Incapacitado";
+					mensagem = 'Incapacitado';
 				}
+		}
+		if (paragrafo && mensagem) {
+			paragrafo.dataset.mensagem = mensagem;
+			paragrafo.textContent = mensagem;
 		}
 	} else if (tipoDano == 'dmgAgravado') {
 		const paragrafo = document.getElementById('pAgravado');
+		let mensagem = '';
 		switch (dmgCont) {
-			case 0:
-				paragrafo.textContent = "Sem ferimentos";
-				reduceDice = 0;
-				break;
 			case 1:
-				paragrafo.textContent = "Escoriado";
+				mensagem = 'Escoriado';
 				reduceDice = 0;
 				break;
 			case 2:
-				paragrafo.textContent = "Machucado(-1)";
+				mensagem = 'Machucado(-1)';
 				reduceDice = 1;
 				break;
 			case 3:
-				paragrafo.textContent = "Ferido(-1)";
+				mensagem = 'Ferido(-1)';
 				reduceDice = 1;
 				break;
 			case 4:
-				paragrafo.textContent = "Ferido Gravemente(-2)";
+				mensagem = 'Ferido Gravemente(-2)';
 				reduceDice = 2;
 				break;
 			case 5:
-				paragrafo.textContent = "Espancado(-2)";
+				mensagem = 'Espancado(-2)';
 				reduceDice = 2;
 				break;
 			case 6:
-				paragrafo.textContent = "Aleijado(-5)";
+				mensagem = 'Aleijado(-5)';
 				reduceDice = 5;
 				break;
 			default:
 				if (dmgCont >= 7) {
-					paragrafo.textContent = "Incapacitado";
+					mensagem = 'Incapacitado';
 				}
+		}
+		if (paragrafo && mensagem) {
+			paragrafo.dataset.mensagem = mensagem;
+			paragrafo.textContent = mensagem;
 		}
 	}
 
