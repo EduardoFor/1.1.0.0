@@ -11,9 +11,19 @@
     <header class="header">
       
       <nav class="nav-bar">
-            <div class="logo">
-                <h1>Logo</h1>
-            </div>
+        <div>
+          <!-- Botão visível para o usuário -->
+          <button onclick="document.getElementById('selecionar-fundo').click()">
+          Alterar Imagem de Fundo
+          </button>
+
+          <!-- Input escondido que faz a mágica -->
+          <input type="file" id="selecionar-fundo" style="display: none;" accept="image/*">
+          <br>
+          <button onclick="removerFundo()">Remover Imagem de Fundo</button>
+          <br>
+          <input type="checkbox" id="retirarContorno" >
+        </div>
             <div class="nav-list">
                 <ul>
                     <li class="nav-item">
@@ -29,19 +39,6 @@
             </div>
             <div class="login-button">
                 <button><input type="file" id="importarArquivo" accept=".json" onchange="importarDeArquivo(this)"></button>
-            </div>
-            <div>
-              <!-- Botão visível para o usuário -->
-              <button onclick="document.getElementById('selecionar-fundo').click()">
-              Alterar Imagem de Fundo
-              </button>
-
-              <!-- Input escondido que faz a mágica -->
-              <input type="file" id="selecionar-fundo" style="display: none;" accept="image/*">
-              <br>
-              <button onclick="removerFundo()">Remover Imagem de Fundo</button>
-              <br>
-              <input type="checkbox" id="retirarContorno" >
             </div>
       </nav>
       
@@ -406,11 +403,11 @@
                     <input type="number" id="reduzirDados" placeholder="Diminuir dados">
                   </div>
                 </div>
-                <div class="centerDiv">
+                <!--<div class="centerDiv">
                   <label for="retirarDebuff">Ignorar Dano:</label>
                   <input type="checkbox" name="retirarDebuff" id="retirarDebuff">
                 </div>
-                <!--<div class="centerDiv">
+                <div class="centerDiv">
                   <label for="teste">Adicionar depois:</label>
                   <input type="checkbox" name="addDepois" id="addDepois">
                 </div>-->
@@ -435,9 +432,8 @@
           <h2 align="center">Vantagens</h2>
           <div class="section" id="dicesDiv">
             <div class="alignVantagens">
-              <div id="vantagemDiv">
-                <h3 align="center">Antecedentes</h3>
-                <div>
+              <div>
+                <div class="flex-container">
                   <div id="antecedenteTable" class="ant-grid">
                     <div class="ant-col" id="mentaisCol">
                       <div class="ant-row">
@@ -467,13 +463,45 @@
                       </div>
                     </div>
                   </div>
-                  <div class="ant-actions">
-                  <button onclick="antMenos()" class="action-buttons">-</button>
-                  <button onclick="antMais()" class="action-buttons">+</button>
+                  <div id="antecedenteTable" class="ant-grid">
+                    <div class="ant-col" id="mentaisCol">
+                      <div class="ant-row">
+                        <input id="Antecedente-1txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-1" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-1"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-2txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-2" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-2"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-3txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-3" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-3"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-4txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-4" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-4"><span class="slider"></span></label></div>
+                      </div>
+                      <div class="ant-row">
+                        <input id="Antecedente-5txt" type="text" placeholder="Antecedente">
+                        <input class="tamanhoNumbers" id="Antecedente-5" type="number" placeholder="coloque aqui" value="0">
+                        <div class="toggle-switch"><label class="switch-label"><input type="checkbox" class="checkbox" id="Antecedente-5"><span class="slider"></span></label></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                </div>
-                <br>
+              <div class="ant-actions">
+                <button onclick="antMenos()" class="action-buttons">-</button>
+                <button onclick="antMais()" class="action-buttons">+</button>
               </div>
+              </div>
+            </div>
+          </div>
+          <div class="section" id="dicesDiv">
+            <div class="alignVantagens">
               <div id="donsDiv">
                 <h3 align="center">Qualidades e Defeitos</h3>
                 <div class="qualidades-defeitos-picker">
@@ -549,95 +577,97 @@
             </div>
           </div>
           <br>
-          <div class="section" id="dicesDiv"> <!--campo de virtudes-->
-            <div class="alignVantagens" >
-              <div class="centerDiv">
+          <div class="section" id="dicesDiv">
+            <div id="ajusteSection"> <!--campo de virtudes-->
+              <div class="alignVantagens" >
+                <div class="centerDiv">
 
-                <div>
-                  <h3 align="center">
-                    Gnose
-                    <input type="number" id="gnose-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
-                  </h3>
-                  <div class="virtude-card centerDiv">
-                    <div class="virtude-row">
-                      <label>Permanentes .:</label>
-                      <input type="number" id="gnose-perm" placeholder="Pontos permanentes">
-                    </div>
-                    <div class="virtude-row">
-                      <label>Temporários..:</label>
-                      <input type="number" id="gnose-temp" placeholder="Pontos temporários">
-                    </div>
-                    <div class="virtude-actions">
-                      <button type="button" onclick="removerPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">-</button>
-                      <button type="button" onclick="adicionarPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">+</button>
-                    </div>
-                    <div class="virtude-subtitle">Barra de consumo</div>
-                    <div class="virtude-range">
-                      <input type="range" min="0" max="10" value="0" id="gnose-range" class="range-input" />
-                      <div class="gnose-value" id="gnose-value">0</div>
+                  <div>
+                    <h3 align="center">
+                      Gnose
+                      <input type="number" id="gnose-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                    </h3>
+                    <div class="virtude-card centerDiv">
+                      <div class="virtude-row">
+                        <label>Permanentes .:</label>
+                        <input type="number" id="gnose-perm" placeholder="Pontos permanentes">
+                      </div>
+                      <div class="virtude-row">
+                        <label>Temporários..:</label>
+                        <input type="number" id="gnose-temp" placeholder="Pontos temporários">
+                      </div>
+                      <div class="virtude-actions">
+                        <button type="button" onclick="removerPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">-</button>
+                        <button type="button" onclick="adicionarPontoVirtude('gnose-perm', 2, (valor) => 2 * (valor + 1))" class="action-buttons">+</button>
+                      </div>
+                      <div class="virtude-subtitle">Barra de consumo</div>
+                      <div class="virtude-range">
+                        <input type="range" min="0" max="10" value="0" id="gnose-range" class="range-input" />
+                        <div class="gnose-value" id="gnose-value">0</div>
+                      </div>
                     </div>
                   </div>
+
                 </div>
 
-              </div>
+                <div class="centerDiv">
 
-              <div class="centerDiv">
-
-                <div>
-                  <h3 align="center">
-                    Fúria
-                    <input type="number" id="furia-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
-                  </h3>
-                  <div class="virtude-card centerDiv">
-                    <div class="virtude-row">
-                      <label>Permanentes .:</label>
-                      <input type="number" id="furia-perm" placeholder="Pontos permanentes">
-                    </div>
-                    <div class="virtude-row">
-                      <label>Temporários..:</label>
-                      <input type="number" id="furia-temp" placeholder="Pontos temporários">
-                    </div>
-                    <div class="virtude-actions">
-                      <button type="button" onclick="removerPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
-                      <button type="button" onclick="adicionarPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
-                    </div>
-                    <div class="virtude-subtitle">Barra de consumo</div>
-                    <div class="virtude-range">
-                      <input type="range" min="0" max="10" value="0" id="furia-range" class="range-input" />
-                      <div class="furia-value" id="furia-value">0</div>
+                  <div>
+                    <h3 align="center">
+                      Fúria
+                      <input type="number" id="furia-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                    </h3>
+                    <div class="virtude-card centerDiv">
+                      <div class="virtude-row">
+                        <label>Permanentes .:</label>
+                        <input type="number" id="furia-perm" placeholder="Pontos permanentes">
+                      </div>
+                      <div class="virtude-row">
+                        <label>Temporários..:</label>
+                        <input type="number" id="furia-temp" placeholder="Pontos temporários">
+                      </div>
+                      <div class="virtude-actions">
+                        <button type="button" onclick="removerPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                        <button type="button" onclick="adicionarPontoVirtude('furia-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                      </div>
+                      <div class="virtude-subtitle">Barra de consumo</div>
+                      <div class="virtude-range">
+                        <input type="range" min="0" max="10" value="0" id="furia-range" class="range-input" />
+                        <div class="furia-value" id="furia-value">0</div>
+                      </div>
                     </div>
                   </div>
+
                 </div>
+                <div class="centerDiv">
 
-              </div>
-              <div class="centerDiv">
-
-                <div>
-                  <h3 align="center">
-                    Força de Vontade
-                    <input type="number" id="fdv-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
-                  </h3>
-                  <div class="virtude-card centerDiv">
-                    <div class="virtude-row">
-                      <label>Permanentes .:</label>
-                      <input type="number" id="fdv-perm" placeholder="Pontos permanentes">
-                    </div>
-                    <div class="virtude-row">
-                      <label>Temporários..:</label>
-                      <input type="number" id="fdv-temp" placeholder="Pontos temporários">
-                    </div>
-                    <div class="virtude-actions">
-                      <button type="button" onclick="removerPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
-                      <button type="button" onclick="adicionarPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
-                    </div>
-                    <div class="virtude-subtitle">Barra de consumo</div>
-                    <div class="virtude-range">
-                      <input type="range" min="0" max="10" value="0" id="fdv-range2" class="range-input" />
-                      <div class="fdv-value3" id="fdv-value3">0</div>
+                  <div>
+                    <h3 align="center">
+                      Força de Vontade
+                      <input type="number" id="fdv-inicial" class="pontosIniciais" value="0" min="0" onkeydown="if(event.key==='-'){event.preventDefault();}">
+                    </h3>
+                    <div class="virtude-card centerDiv">
+                      <div class="virtude-row">
+                        <label>Permanentes .:</label>
+                        <input type="number" id="fdv-perm" placeholder="Pontos permanentes">
+                      </div>
+                      <div class="virtude-row">
+                        <label>Temporários..:</label>
+                        <input type="number" id="fdv-temp" placeholder="Pontos temporários">
+                      </div>
+                      <div class="virtude-actions">
+                        <button type="button" onclick="removerPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">-</button>
+                        <button type="button" onclick="adicionarPontoVirtude('fdv-perm', 1, (valor) => valor + 1)" class="action-buttons">+</button>
+                      </div>
+                      <div class="virtude-subtitle">Barra de consumo</div>
+                      <div class="virtude-range">
+                        <input type="range" min="0" max="10" value="0" id="fdv-range2" class="range-input" />
+                        <div class="fdv-value3" id="fdv-value3">0</div>
+                      </div>
                     </div>
                   </div>
-                </div>
 
+                </div>
               </div>
             </div>
           </div>
