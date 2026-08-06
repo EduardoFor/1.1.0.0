@@ -402,7 +402,7 @@
                   </div>
                   <br>
                   <div>
-                    <label for="reduzirDados">Redução de dados:(indisponível)</label>
+                    <label for="reduzirDados">Redução de dados:</label>
                     <input type="number" id="reduzirDados" placeholder="Diminuir dados">
                   </div>
                 </div>
@@ -651,33 +651,123 @@
               <div class="centerDiv">
                 <div>
                   <h3 align="center">Vitalidade</h3>
-                  <div id="vitalidadeTable" class="virtude-card centerDiv">
-                    <div class="virtude-row">
-                      <label>Contusivo .:</label>
-                      <input id="dmgContusivo" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgContusivo')" onfocus="selecionarCampoDano('dmgContusivo')">
+                  <div id="vitalidadeTable" class="virtude-card vitalidade-grid">
+                    <div class="vitalidade-col">
+                      <div class="vitalidade-row">
+                        <label>NIVEL DE VITALIDADE</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Escoriado:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Machucado:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Ferido:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Ferido Gravemente:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Espancado:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Aleijado:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>Incapacitado:</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <label>DANO DE MORTE</label>
+                      </div>
                     </div>
-                    <div class="virtude-row">
-                      <label>Letal . . . . .:</label>
-                      <input id="dmgLetal" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgLetal')" onfocus="selecionarCampoDano('dmgLetal')">
+                    <div class="vitalidade-col">
+                      <div class="vitalidade-row">
+                        <label>CONT.</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
                     </div>
-                    <div class="virtude-row">
-                      <label>Agravado. .:</label>
-                      <input id="dmgAgravado" type="number" placeholder="coloque aqui" value="0" readonly onclick="selecionarCampoDano('dmgAgravado')" onfocus="selecionarCampoDano('dmgAgravado')">
+                    <div class="vitalidade-col">
+                      <div class="vitalidade-row">
+                        <label>LETAL</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
                     </div>
-                    <div class="virtude-row">
-                      <label>Dano Recebido:</label>
-                      <input id="danoRecebido" type="number" placeholder="valor" value="0" min="0">
+                    <div class="vitalidade-col">
+                      <div class="vitalidade-row">
+                        <label>AGRAV.</label>
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
+                      <div class="vitalidade-row">
+                        <input type="checkbox">
+                      </div>
                     </div>
-                    <div class="virtude-row">
-                      <label>Dano Curado:</label>
-                      <input id="danoCurado" type="number" placeholder="valor" value="0" min="0">
-                    </div>
-                    <div class="virtude-actions">
-                      <button type="button" class="glow-on-hover" onclick="retirarDados()">Aplicar dano</button>
-                    </div>
-                    <p id="pConstusivo"></p>
-                    <p id="pLetal"></p>
-                    <p id="pAgravado"></p>
                   </div>
                   <br>
                 </div>

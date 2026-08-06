@@ -185,6 +185,12 @@ h1,h2,h3 {
 	min-width: 240px;
 }
 
+.virtude-col {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
 .virtude-row {
 	display: flex;
 	align-items: center;
@@ -868,6 +874,29 @@ footer {
 	justify-content: center;
 }
 
+#vitalidadeTable.vitalidade-grid {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	flex-wrap: wrap;
+	padding: 8px 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.vitalidade-col {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.vitalidade-row {
+	align-items: center;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+	gap: 8px;
+}
 /* ── Confirmação de PB para XP ── */
 
 .overlay {

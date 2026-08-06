@@ -189,6 +189,11 @@ function getNumber() {
 	jogaDados(soma);
 }
 
+function reduzirDadosJogados(valor) {
+	const entrada = Number.parseInt(valor ?? document.getElementById('reduzirDados')?.value, 10) || 0;
+	return Math.max(0, entrada);
+}
+
 function jogaDados(soma) {
   
 	let redutor = reduceDice;
@@ -201,8 +206,9 @@ function jogaDados(soma) {
 	if (modDados > 0) {
 		soma += modDados;
 	}
-	let somaMod = soma - redutor;	
-	let qDice = somaMod;
+	const reducao = reduzirDadosJogados(document.getElementById('reduzirDados')?.value);
+	let somaMod = soma - redutor - reducao;	
+	let qDice = Math.max(0, somaMod);
 	
 	let diceArray = new Array(qDice); //Vetor com tamanho igual ao numero de dados
 	let resultado = ""; //Variável para impressão do resultado
@@ -285,8 +291,10 @@ function alterarLabel(diceArray) {
 function randomDice() {
 	numLados = parseInt(document.getElementById('NumLados').value);
 	numDice = parseInt(document.getElementById('NumDice').value);
+	const reducao = reduzirDadosJogados(document.getElementById('reduzirDados')?.value);
+	const totalDados = Math.max(0, numDice - reducao);
 
-	let diceArray = new Array(numDice); //Vetor com tamanho igual ao numero de dados
+	let diceArray = new Array(totalDados); //Vetor com tamanho igual ao numero de dados
   	let resultado = "";
 
 	const container = document.getElementById('dadosManual');
@@ -297,7 +305,7 @@ function randomDice() {
 	}
 
 	//Laço para lançamento de dados  
-	for (let i = 0; i < numDice; i++) {
+	for (let i = 0; i < totalDados; i++) {
 		//Lança o valor do dado  
 		let x = Math.floor(Math.random() * numLados) + 1 
 		diceArray[i] = x;
@@ -788,44 +796,6 @@ function selecionarCampoDano(campoId) {
 		dmg = campoId;
 		alterarParagrafo();
 	}
-}
-
-function retirarDados() {
-	const valorRecebido = parseInt(document.getElementById('danoRecebido').value, 10) || 0;
-	const valorCurado = parseInt(document.getElementById('danoCurado').value, 10) || 0;
-	const camposOrdem = ['dmgContusivo', 'dmgLetal', 'dmgAgravado'];
-
-	saldoDanoTotal = Math.max(0, saldoDanoTotal + valorRecebido - valorCurado);
-	saldoDanoTotal = Math.min(saldoDanoTotal, 18);
-
-	let campoDestinoId = 'dmgContusivo';
-	let valorParaProcessar = saldoDanoTotal;
-
-	if (saldoDanoTotal >= 7 && saldoDanoTotal <= 12) {
-		campoDestinoId = 'dmgLetal';
-		valorParaProcessar = saldoDanoTotal - 6;
-	} else if (saldoDanoTotal >= 13) {
-		campoDestinoId = 'dmgAgravado';
-		valorParaProcessar = saldoDanoTotal - 12;
-	}
-
-	camposOrdem.forEach((campoId) => {
-		const campo = document.getElementById(campoId);
-		if (!campo) return;
-
-		if (campoId === 'dmgContusivo') {
-			campo.value = saldoDanoTotal >= 7 ? 0 : saldoDanoTotal;
-		} else if (campoId === 'dmgLetal') {
-			campo.value = saldoDanoTotal >= 7 && saldoDanoTotal <= 12 ? valorParaProcessar : 0;
-		} else if (campoId === 'dmgAgravado') {
-			campo.value = saldoDanoTotal >= 13 ? valorParaProcessar : 0;
-		}
-	});
-
-	dmg = campoDestinoId;
-	document.getElementById('danoRecebido').value = 0;
-	document.getElementById('danoCurado').value = 0;
-	gravidadeFerimentos(valorParaProcessar, campoDestinoId);
 }
 
 function alterarParagrafo() {
