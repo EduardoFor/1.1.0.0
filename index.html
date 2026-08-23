@@ -887,18 +887,10 @@
 	<br>
 	<br>
     <footer class="footer">
+      <br>
+      <h2>Personalizações</h2>
       <div id="separa">
-		    <div class="nav-list">
-			    <div class="footer-title-space">
-				    <h3>Cores base:</h3>
-			    </div>
-			    <div class="footer-title-space">
-				    <h3>Modos de tela:</h3>
-			    </div>
-			    <div class="footer-title-space">
-				    <h3>Sobre nós:</h3>
-			    </div>
-		    </div>
+        <br>
         <div class="nav-list">
 			    <div class="color-buttons">
 				
@@ -910,7 +902,25 @@
             <br>
             <label for="secondaryColor">Cor Secundária:</label>
             <input type="color" name="" id="secondaryColor">
-
+            <br>
+            <div>
+              <label for="img-Fundo">Imagem de Fundo:</label><br>
+              <input type="url" id="img-Fundo"><br>
+              <button onclick="aplicarFundo()">Aplicar Imagem</button><br>
+              <button onclick="removerFundo()">Remover Imagem</button>
+            </div>
+            <br>
+            <div>
+              <label for="retirarContorno">Retirar Contorno:</label>
+              <br>
+              <div class="toggle-switch">
+                <label class="switch-label">
+                <input type="checkbox" class="checkbox" id="retirarContorno" onclick="retiraContorno()">
+                <span class="slider"></span>
+                </label>
+              </div>
+            </div>
+            
 			    </div>
           <div class="modos-tela">
             <div class="flex-modos">
@@ -949,29 +959,6 @@
 				      
 			      </div>
           </div>
-          <div>
-
-            <!-- Botão visível para o usuário 
-            <button onclick="document.getElementById('selecionar-fundo').click()">
-            Alterar Imagem de Fundo
-            </button>-->
-
-            <!-- Input escondido que faz a mágica 
-            <input type="file" id="selecionar-fundo" style="display: none;" accept="image/*">
-            <br>
-            <button onclick="removerFundo()">Remover Imagem de Fundo</button> -->
-            
-            <div>
-              <label for="img-Fundo">Imagem de Fundo:</label><br>
-              <input type="url" id="img-Fundo">
-              <button onclick="aplicarFundo()">Aplicar Imagem</button>
-              <button onclick="removerFundo()">Remover Imagem</button>
-            </div>
-            <br>
-            <label for="retirarContorno">Retirar Contorno</label>
-            <input type="checkbox" id="retirarContorno" onclick="retiraContorno()">
-
-          </div>
           <div class="color-buttons">
             <div>Total de XP</div>
 			      <div><input type="number" name="XP-number" id="XP-pool" value="0"></div><br>
@@ -979,13 +966,13 @@
 			      <div><input type="number" name="PB-number" id="PB-pool" value="0"></div><br>
             <div class="margem-maior">----- Tipo de Pontos -----</div> <br>
             <div class="alinhar">
-              <div class="margem">Pontos de XP</div><br>
-              <div class="toggle-switch">
+              <div class="margem">Pontos de XP</div>
+              <div class="toggle-switch" id="espaçamentoEntre">
                 <label class="switch-label">
                 <input type="checkbox" class="checkbox" id="tipoPonto" onchange="abrirModal()" checked>
                 <span class="slider"></span>
                 </label>
-              </div><br>
+              </div>
               <div class="margem">Pontos Bonus</div>
             </div>
           </div>

@@ -636,6 +636,7 @@ footer {
 	height: auto;
 	background-color: var(--background-section);
 	padding: 0px 20px 20px 20px;
+	max-width: 100%;
 }
 
 .footer-title-space{
@@ -666,7 +667,7 @@ footer {
 
 .color-buttons{
 	display: grid;
-	padding: 5px 80px 40px 80px;
+	padding: 5px 80px 20px 80px;
 	margin-left: auto;
 	margin-right: auto;
 	/*border-right: 1px solid black;*/
@@ -679,7 +680,6 @@ footer {
 	display:flexbox;
 	margin-left: auto;
 	margin-right:auto;
-	padding: 5px 150px 40px 150px;
 	/*border-right: 1px solid black;*/
 }
 
@@ -714,7 +714,8 @@ footer {
 	display: block;
 }
 #separa{
-	justify-content: space-between;
+	/* margin-left: auto;
+	margin-right: auto; */
 }
 
 #espacoBordas{
@@ -731,11 +732,15 @@ footer {
 
 .alinhar{
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(8px, 2vw, 24px);
+	flex-wrap: wrap;
 }
 
-.margem{
-	margin-right: 10px;
-	margin-left: 10px;
+#espaçoEntre{
+	margin-right: 20px;
+	margin-left: 20px;
 }
 
 .margem-maior{

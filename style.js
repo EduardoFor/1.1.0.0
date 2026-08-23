@@ -1371,29 +1371,6 @@ function aplicarFundo() {
 	document.body.style.backgroundImage = `url(${imgOrigem})`;
 	localStorage.setItem('backgroundUser', imgOrigem);
 }
-	
-/* const input = document.getElementById('selecionar-fundo');
- // 2. Escuta quando o usuário seleciona um novo arquivo
-    input.addEventListener('change', function() {
-        const arquivo = this.files[0];
-        if (arquivo) {
-        const leitor = new FileReader();
-        
-        leitor.onload = function(e) {
-            const urlImagem = e.target.result;
-            
-            // Aplica no fundo da página
-            document.body.style.backgroundImage = `url(${urlImagem})`;
-            
-            // Salva localmente no navegador
-            localStorage.setItem('backgroundUser', urlImagem);
-        };
-
-		document.documentElement.style.setProperty('--background-color', 'transparent');
-        
-        leitor.readAsDataURL(arquivo);
-        }
-    }); */
 
 function retiraContorno() {
 	const contorno = document.getElementById('retirarContorno');
