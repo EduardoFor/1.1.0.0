@@ -12,19 +12,6 @@
     <header class="header">
       
       <nav class="nav-bar">
-        <div>
-          <!-- Botão visível para o usuário -->
-          <button onclick="document.getElementById('selecionar-fundo').click()">
-          Alterar Imagem de Fundo
-          </button>
-
-          <!-- Input escondido que faz a mágica -->
-          <input type="file" id="selecionar-fundo" style="display: none;" accept="image/*">
-          <br>
-          <button onclick="removerFundo()">Remover Imagem de Fundo</button>
-          <br>
-          <input type="checkbox" id="retirarContorno" >
-        </div>
             <div class="nav-list">
                 <ul>
                     <li class="nav-item">
@@ -961,6 +948,29 @@
 			      <div class="flex-modos">
 				      
 			      </div>
+          </div>
+          <div>
+
+            <!-- Botão visível para o usuário 
+            <button onclick="document.getElementById('selecionar-fundo').click()">
+            Alterar Imagem de Fundo
+            </button>-->
+
+            <!-- Input escondido que faz a mágica 
+            <input type="file" id="selecionar-fundo" style="display: none;" accept="image/*">
+            <br>
+            <button onclick="removerFundo()">Remover Imagem de Fundo</button> -->
+            
+            <div>
+              <label for="img-Fundo">Imagem de Fundo:</label><br>
+              <input type="url" id="img-Fundo">
+              <button onclick="aplicarFundo()">Aplicar Imagem</button>
+              <button onclick="removerFundo()">Remover Imagem</button>
+            </div>
+            <br>
+            <label for="retirarContorno">Retirar Contorno</label>
+            <input type="checkbox" id="retirarContorno" onclick="retiraContorno()">
+
           </div>
           <div class="color-buttons">
             <div>Total de XP</div>

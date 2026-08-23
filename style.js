@@ -1366,7 +1366,13 @@ function removerFundo() {
 	document.documentElement.style.setProperty('--background-color', '#111');
 }
 
-const input = document.getElementById('selecionar-fundo');
+function aplicarFundo() {
+	let imgOrigem = document.getElementById('img-Fundo').value;
+	document.body.style.backgroundImage = `url(${imgOrigem})`;
+	localStorage.setItem('backgroundUser', imgOrigem);
+}
+	
+/* const input = document.getElementById('selecionar-fundo');
  // 2. Escuta quando o usuário seleciona um novo arquivo
     input.addEventListener('change', function() {
         const arquivo = this.files[0];
@@ -1387,16 +1393,18 @@ const input = document.getElementById('selecionar-fundo');
         
         leitor.readAsDataURL(arquivo);
         }
-    });
+    }); */
 
-contorno.addEventListener('change', function() {
-
-	if (this.checked) {
-		document.documentElement.style.setProperty('--background-color', 'transparent');
-	} else {
-		document.documentElement.style.setProperty('--background-color', '#111');
-	}
-});
+function retiraContorno() {
+	const contorno = document.getElementById('retirarContorno');
+	contorno.addEventListener('change', function() {
+		if (this.checked) {
+			document.documentElement.style.setProperty('--background-color', 'transparent');
+		} else {
+			document.documentElement.style.setProperty('--background-color', '#111');
+		}
+	});
+}
 
 // Aviso de dupla confirmação
 
