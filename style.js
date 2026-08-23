@@ -1101,18 +1101,39 @@ sliderE3.addEventListener("input", (event) => {
   sliderE3.style.background = `linear-gradient(to right, #d60101 ${progress}%, #ccc ${progress}%)`;
 })
 
-textColor.addEventListener('input', (event)=>{
-	let cor = event.target.value;
-	document.documentElement.style.setProperty('--title-text-color', cor);
-});
-mainColor.addEventListener('input', (event)=>{
-	let cor = event.target.value;
-	document.documentElement.style.setProperty('--main-color', cor);
-});
-secondaryColor.addEventListener('input', (event)=>{
-	let cor = event.target.value;
-	document.documentElement.style.setProperty('--secondary-color', cor);
-});
+function inicializarPersonalizacaoDeCores() {
+	const textColor = document.getElementById('textColor');
+	const mainColor = document.getElementById('mainColor');
+	const secondaryColor = document.getElementById('secondaryColor');
+
+	if (textColor) {
+		textColor.addEventListener('input', (event) => {
+			console.log('alterando cor do texto do título');
+			const cor = event.target.value;
+			document.documentElement.style.setProperty('--title-text-color', cor);
+		});
+	}
+
+	if (mainColor) {
+		mainColor.addEventListener('input', (event) => {
+			const cor = event.target.value;
+			document.documentElement.style.setProperty('--main-color', cor);
+		});
+	}
+
+	if (secondaryColor) {
+		secondaryColor.addEventListener('input', (event) => {
+			const cor = event.target.value;
+			document.documentElement.style.setProperty('--secondary-color', cor);
+		});
+	}
+}
+
+if (document.readyState === 'loading') {
+	document.addEventListener('DOMContentLoaded', inicializarPersonalizacaoDeCores);
+} else {
+	inicializarPersonalizacaoDeCores();
+}
 
 // Mantém apenas uma seleção ativa por categoria, evitando múltiplos atributos/habilidades marcados.
 function desmarcarCheckboxes(checkboxTable) {
