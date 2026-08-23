@@ -1,38 +1,26 @@
+// ===== Estado do personagem =====
 var habId = 'Tecnologia';
 var atrId = 'Forca';
-var totalXP = document.getElementById('XP-pool').value;
-var numLados = document.getElementById('NumLados').value;
-var numDice
-var antDice
-var numinaDice
-var dmg
+var numLados = document.getElementById('NumLados')?.value || 10;
+var numDice;
+var antDice;
+var dmg;
 var saldoDanoTotal = 0;
 var forma = 'homnideoCheck';
-var ImgFormaHumana
-var ImgFormaGlabro
-var ImgFormaCrinos
-var ImgFormaHispo
-var ImgFormaLupino
-var ImgFormaDefault
-//diminui o numero de dados a serem rolados
 var reduceDice = 0;
 var noReduceDice = 0;
 
+// ===== Controles da interface =====
 const textColor = document.getElementById('textColor');
 const mainColor = document.getElementById('mainColor');
 const secondaryColor = document.getElementById('secondaryColor');
-const contorno = document.getElementById('retirarContorno');
 const negarDebuff = document.getElementById('retirarDebuff');
 const damageDebuff = document.getElementById('vitalidadeTable');
 const containerAtr = document.getElementById('atrTable');
 const containerHab = document.getElementById('habTable');
 const containAntDice = document.getElementById('antecedenteTable');
 const containerForma = document.getElementById('formaTable');
-const qtdDice = document.getElementById('NumDice');
 const tipoPonto = document.getElementById("tipoPonto");
-const containerTalentos = document.getElementById('talentosCol');
-const containerPericias = document.getElementById('periciasCol');
-const containerConhecimentos = document.getElementById('conhecimentosCol');
 
 damageDebuff.addEventListener('change', function(event) {
 const idAlvo = event.target.id;
@@ -47,6 +35,7 @@ const imgCrinos = document.getElementById('img-crinos');
 const imgHispo = document.getElementById('img-hispo');
 const imgLupino = document.getElementById('img-lupino');
 
+// ===== Eventos de seleção de forma e atributos =====
 containerForma.addEventListener('change', function(event) {
 if (event.target.checked){
 	forma = event.target.id;
@@ -108,6 +97,7 @@ containAntDice.addEventListener('change', function(event) {
 antDice = event.target.id;
 });
 
+// Calcula o valor base da rolagem usando habilidade, atributo e bônus de forma.
 function getNumber() {
 
 	let habValue = 0;
@@ -194,6 +184,7 @@ function reduzirDadosJogados(valor) {
 	return Math.max(0, entrada);
 }
 
+// Executa a rolagem, aplica redução de dados e exibe os resultados na tela.
 function jogaDados(soma) {
   
 	let redutor = reduceDice;
@@ -249,6 +240,7 @@ function jogaDados(soma) {
 		alterarLabel(diceArray);
 }
 
+// Converte os dados em sucesso, falha e bônus/penalidades de acordo com a dificuldade.
 function alterarLabel(diceArray) {
 
 	const labelElement = document.getElementById("sucessosId");
@@ -398,18 +390,57 @@ function limparCampos() {
 	const textareas = document.querySelectorAll('textarea');
 	const ranges = document.querySelectorAll('input[type="range"]');
 	const inputsUrl = document.querySelectorAll('input[type="url"]');
+	const cardsQualidadesDefeitos = document.getElementById('qualidadesDefeitosCards');
 
-	[...inputsText, ...inputsNumber, ...textareas, ...ranges, ...inputsUrl].forEach(element => {
+	// Clear text-like inputs
+	[...inputsText, ...textareas, ...ranges, ...inputsUrl].forEach(element => {
 		element.value = '';
-    	if (element.id) {
-    		localStorage.removeItem(element.id);
-    	}
-  	});
+		if (element.id) localStorage.removeItem(element.id);
+	});
+
+	// Set attribute numeric inputs to 1 and persist
+	const attrInputs = document.querySelectorAll('.atr-row input[type="number"]');
+	attrInputs.forEach(i => {
+		i.value = 1;
+		if (i.id) localStorage.setItem(i.id, '1');
+	});
+
+	// Set skill numeric inputs to 0 and persist
+	const habInputs = document.querySelectorAll('.hab-row input[type="number"]');
+	habInputs.forEach(i => {
+		i.value = 0;
+		if (i.id) localStorage.setItem(i.id, '0');
+	});
+
+	// For any other number inputs (virtudes, pools), clear them
+	const otherNumberInputs = Array.from(inputsNumber).filter(n => !n.closest('.atr-row') && !n.closest('.hab-row'));
+	otherNumberInputs.forEach(n => {
+		if (n.id) {
+			n.value = '';
+			localStorage.removeItem(n.id);
+		}
+	});
+
+	localStorage.removeItem('qualidadesDefeitosSelecionados');
+	if (typeof window.limparQualidadesDefeitos === 'function') {
+		window.limparQualidadesDefeitos();
+	}
+	if (cardsQualidadesDefeitos) {
+		cardsQualidadesDefeitos.replaceChildren();
+		const mensagemVazia = document.createElement('p');
+		mensagemVazia.className = 'qualidades-defeitos-vazio';
+		mensagemVazia.textContent = 'Nenhuma qualidade ou defeito selecionado.';
+		cardsQualidadesDefeitos.appendChild(mensagemVazia);
+	}
 
 	sliderEl.value = 0;
 	sliderValue1.textContent = "0";
 	sliderE2.value = 0;
 	sliderValue2.textContent = "0";
+	if (sliderE3) {
+		sliderE3.value = 0;
+		sliderValue3.textContent = "0";
+	}
 
   	alert('Todos os campos foram limpos e os dados salvos foram removidos.');
 }
@@ -423,11 +454,46 @@ function limparCampos() {
 	const inputsUrl = document.querySelectorAll('input[type="url"]');
 	// const sliderE2 = document.querySelector("#fdv-range2");
 
-	[...inputsText, ...inputsNumber, ...textareas, ...ranges, ...inputsUrl].forEach(element => {
-    	if (element.id) {
-    		localStorage.setItem(element.id, element.value);
-      	}
-    });
+	// Save number inputs first (ensure numeric values for attributes/skills/virtudes)
+	[...inputsNumber].forEach(element => {
+		if (element.id) localStorage.setItem(element.id, element.value);
+	});
+
+	// Save other inputs (text, ranges, urls)
+	[...inputsText, ...textareas, ...ranges, ...inputsUrl].forEach(element => {
+		if (element.id) localStorage.setItem(element.id, element.value);
+	});
+
+	// Save checkboxes only if there is no number input with the same id (avoid overwriting numeric fields)
+	const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+	[...checkboxes].forEach(cb => {
+		if (!cb.id) return;
+		const numMatch = document.querySelector(`input[type="number"]#${cb.id.replace(/"/g,'\\"')}`);
+		if (!numMatch) {
+			localStorage.setItem(cb.id, cb.checked);
+		}
+	});
+
+	// Also store grouped maps for attributes, skills and virtudes for easier export/import
+	const attributes = {};
+	const skills = {};
+	const virtudes = {};
+	document.querySelectorAll('.atr-row input[type="number"]').forEach(i => { if (i.id) attributes[i.id] = i.value; });
+	document.querySelectorAll('.hab-row input[type="number"]').forEach(i => { if (i.id) skills[i.id] = i.value; });
+	document.querySelectorAll('.virtude-row input[type="number"]').forEach(i => { if (i.id) virtudes[i.id] = i.value; });
+
+	localStorage.setItem('attributes', JSON.stringify(attributes));
+	localStorage.setItem('skills', JSON.stringify(skills));
+	localStorage.setItem('virtudes', JSON.stringify(virtudes));
+
+	// Save selected Qualidades/Defeitos cards (store array of item ids)
+	const cardsContainer = document.getElementById('qualidadesDefeitosCards');
+	if (cardsContainer) {
+		const selectedIds = Array.from(cardsContainer.querySelectorAll('[data-item-id]'))
+			.map(el => el.dataset.itemId)
+			.filter(Boolean);
+		localStorage.setItem('qualidadesDefeitosSelecionados', JSON.stringify(selectedIds));
+	}
 
     alert('Todos os dados foram salvos com sucesso!');
   }
@@ -459,6 +525,17 @@ function limparCampos() {
 	if (carregaImgHumano) {
 		document.getElementById('formaImg').src = carregaImgHumano;	
   	}
+
+	// Carregar seleção de Qualidades/Defeitos (cards)
+	try {
+		const selecaoSalva = localStorage.getItem('qualidadesDefeitosSelecionados');
+		if (selecaoSalva && typeof window.carregarQualidadesDefeitos === 'function') {
+			const arr = JSON.parse(selecaoSalva);
+			if (Array.isArray(arr)) window.carregarQualidadesDefeitos(arr);
+		}
+	} catch (e) {
+		// ignore parse errors
+	}
 }
 function aplicarSaldoDano(saldo) {
 	const camposOrdem = ['dmgContusivo', 'dmgLetal', 'dmgAgravado'];
@@ -506,9 +583,14 @@ function exportarParaArquivo() {
 	const data = {};
 
 	[...inputsNumber, ...inputsText, ...textareas, ...ranges, ...inputsUrl, ...checkboxes].forEach(input => {
-		if (input.id) {
-			data[input.id] = input.type === 'checkbox' ? input.checked : input.value;
+		if (!input.id) return;
+		// If there's a number input with same id, prefer numeric value (avoid checkbox overwrite)
+		const numMatch = document.querySelector(`input[type="number"]#${input.id.replace(/"/g,'\\"')}`);
+		if (numMatch) {
+			data[input.id] = numMatch.value;
+			return;
 		}
+		data[input.id] = input.type === 'checkbox' ? input.checked : input.value;
 	});
 
 	const selecaoQualidadesDefeitos = JSON.parse(
@@ -520,6 +602,11 @@ function exportarParaArquivo() {
 	data.saldoDanoTotal = saldoDanoTotal;
 	data.totalXP = document.getElementById('XP-pool')?.value || '0';
 	data.totalPontosBonus = document.getElementById('PB-pool')?.value || '0';
+
+	// also include grouped attribute/skill/virtude maps for export
+	data.attributes = JSON.parse(localStorage.getItem('attributes') || '{}');
+	data.skills = JSON.parse(localStorage.getItem('skills') || '{}');
+	data.virtudes = JSON.parse(localStorage.getItem('virtudes') || '{}');
 
 	const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
 	const url = URL.createObjectURL(blob);
@@ -552,6 +639,26 @@ function importarDeArquivo(input) {
 				if (typeof window.carregarQualidadesDefeitos === 'function') {
 					window.carregarQualidadesDefeitos(selecaoQualidades);
 				}
+			}
+
+			// If file contains grouped attribute/skill/virtude objects, restore their inputs first
+			if (data.attributes && typeof data.attributes === 'object') {
+				Object.keys(data.attributes).forEach(id => {
+					const el = document.getElementById(id);
+					if (el && el.type === 'number') el.value = data.attributes[id];
+				});
+			}
+			if (data.skills && typeof data.skills === 'object') {
+				Object.keys(data.skills).forEach(id => {
+					const el = document.getElementById(id);
+					if (el && el.type === 'number') el.value = data.skills[id];
+				});
+			}
+			if (data.virtudes && typeof data.virtudes === 'object') {
+				Object.keys(data.virtudes).forEach(id => {
+					const el = document.getElementById(id);
+					if (el && el.type === 'number') el.value = data.virtudes[id];
+				});
 			}
 
 			Object.keys(data).forEach(id => {
@@ -1007,6 +1114,7 @@ secondaryColor.addEventListener('input', (event)=>{
 	document.documentElement.style.setProperty('--secondary-color', cor);
 });
 
+// Mantém apenas uma seleção ativa por categoria, evitando múltiplos atributos/habilidades marcados.
 function desmarcarCheckboxes(checkboxTable) {
 	let conteiner = 0;
 	if (checkboxTable === atrId) {
@@ -1144,6 +1252,7 @@ function atrMenos(){
   	
 }
 
+// Aumenta uma habilidade e usa a mesma lógica de custo de pontos da área de atributos.
 function habMais(){
   	var atual = document.getElementById(habId).value;
   	var totalXP = parseInt(document.getElementById('XP-pool').value);
@@ -1236,6 +1345,7 @@ function habMenos(){
   	
 }
 
+// Ajusta virtudes/traços com cobrança em PB ou XP e mantém os valores iniciais consistentes.
 function ajustarPontoVirtude(campoId, custoPB, custoXP, operacao) {
 	const input = document.getElementById(campoId);
 	if (!input) return;
@@ -1291,6 +1401,7 @@ function removerPontoVirtude(campoId, custoPB, custoXP) {
 	ajustarPontoVirtude(campoId, custoPB, custoXP, 'menos');
 }
 
+// Incrementa o valor do antecedente selecionado usando o mesmo painel de consumo de pontos.
 function antMais(){
 	const container = document.getElementById('antecedenteTable');
 	if (!container) return;
@@ -1366,12 +1477,14 @@ function removerFundo() {
 	document.documentElement.style.setProperty('--background-color', '#111');
 }
 
+// Aplica a imagem de fundo escolhida e salva a preferência no navegador.
 function aplicarFundo() {
 	let imgOrigem = document.getElementById('img-Fundo').value;
 	document.body.style.backgroundImage = `url(${imgOrigem})`;
 	localStorage.setItem('backgroundUser', imgOrigem);
 }
 
+// Remove o contorno visual quando a opção de esconder fundo é ativada.
 function retiraContorno() {
 	const contorno = document.getElementById('retirarContorno');
 	contorno.addEventListener('change', function() {
@@ -1383,8 +1496,7 @@ function retiraContorno() {
 	});
 }
 
-// Aviso de dupla confirmação
-
+// ===== Confirmação de conversão de pontos =====
 function abrirModal() {
   document.getElementById("overlay-confirmacao").style.display = "flex";
 }
@@ -1417,7 +1529,7 @@ function iniciarAtributos() {
 	});
 }
 
-// Carrega automaticamente os valores ao abrir a página
+// ===== Inicialização =====
 window.onload = () => {
 		carregarCampos();
 		iniciarAtributos();
